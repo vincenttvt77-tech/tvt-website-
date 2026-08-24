@@ -1,0 +1,101 @@
+<section class="hero">
+  <div class="wrap">
+    <div class="intake-grid" style="padding:88px 0;">
+      <div>
+        <div class="eyebrow on-dark reveal">Apply for capital</div>
+        <h1 class="h-xl reveal" data-reveal-delay="80" style="color:#fff; font-size:clamp(38px,5vw,68px);">Two minutes. <span class="italic-accent">Typically a same-day response.</span></h1>
+        <div class="hero-rule reveal" data-reveal-delay="150"></div>
+        <p class="lede on-dark reveal" data-reveal-delay="190" style="max-width:52ch;">Fill in the intake. A senior underwriter typically calls the same business day with an indication. Indicative term sheet usually issued within 24 hours — funding subject to underwriting, diligence, and standard close conditions.</p>
+
+        <div class="feature-list mt-40 reveal" data-reveal-delay="240">
+          <div><span class="k">01</span><div><strong>No documents to start.</strong><p>The intake takes about two minutes. Diligence begins only after you review an indication.</p></div></div>
+          <div><span class="k">02</span><div><strong>No upfront fees.</strong><p>Application and indication are free. No retainer, no diligence fee.</p></div></div>
+          <div><span class="k">03</span><div><strong>A senior underwriter — not a portal.</strong><p>A senior U.S. credit officer reviews every file.</p></div></div>
+        </div>
+
+        <div class="mt-40 reveal">
+          <div class="eyebrow on-dark" style="margin-bottom:20px;">Or skip the form</div>
+          <div class="actions">
+            <a class="btn btn-brass" href="tel:+15555555555">(555) 555-5555</a>
+            <a class="btn btn-outline on-dark" href="mailto:info@tvtcapital.com">info@tvtcapital.com</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-card reveal" data-reveal-delay="120">
+        <div class="form-eyebrow">Borrower intake</div>
+        <h3>Get a term sheet</h3>
+        <p class="form-sub">Three short steps. Nothing to upload.</p>
+        <form name="borrower-application" method="POST" action="https://api.web3forms.com/submit" data-wizard>
+          <input type="hidden" name="access_key" value="32e30523-8376-42b6-ad15-d191e411789d" />
+          <input type="hidden" name="subject" value="New borrower application — TVT Capital site" />
+          <input type="hidden" name="from_name" value="TVT Capital Website" />
+          <input type="hidden" name="redirect" value="https://tvt-capital.vercel.app/thanks.html" />
+          <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" aria-hidden="true" />
+          <noscript><style>[data-wizard] .fstep{display:grid !important} [data-wizard] .fstep-meta,[data-wizard] .fstep-bar{display:none}</style></noscript>
+
+          <div class="fstep-meta"><span class="count">Step <b data-wizard-now>1</b> of 3</span></div>
+          <div class="fstep-bar"><i data-wizard-bar></i></div>
+
+          <div class="fsteps" style="margin-top:22px;">
+            <fieldset class="fstep on" data-step="1" style="border:none;margin:0;padding:0;">
+              <div class="field">
+                <label>Capital needed</label>
+                <div class="pill-group stack">
+                  <label><input type="radio" name="Capital Needed" value="Under $100K" required /><span class="pill-face">Under $100K</span></label>
+                  <label><input type="radio" name="Capital Needed" value="$100K – $250K" /><span class="pill-face">$100K &ndash; $250K</span></label>
+                  <label><input type="radio" name="Capital Needed" value="$250K – $500K" /><span class="pill-face">$250K &ndash; $500K</span></label>
+                  <label><input type="radio" name="Capital Needed" value="$500K – $1M" /><span class="pill-face">$500K &ndash; $1M</span></label>
+                  <label><input type="radio" name="Capital Needed" value="$1M+" /><span class="pill-face">$1M+</span></label>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="fstep" data-step="2" style="border:none;margin:0;padding:0;">
+              <div class="field">
+                <label>Use of proceeds</label>
+                <div class="pill-group stack">
+                  <label><input type="radio" name="Use of Proceeds" value="Growth" required /><span class="pill-face">Growth</span></label>
+                  <label><input type="radio" name="Use of Proceeds" value="Acquisition" /><span class="pill-face">Acquisition</span></label>
+                  <label><input type="radio" name="Use of Proceeds" value="Bridge to event" /><span class="pill-face">Bridge to event</span></label>
+                  <label><input type="radio" name="Use of Proceeds" value="Working capital" /><span class="pill-face">Working capital</span></label>
+                  <label><input type="radio" name="Use of Proceeds" value="Other" /><span class="pill-face">Other</span></label>
+                </div>
+              </div>
+              <div class="fstep-nav"><button type="button" class="fstep-back" data-back>&larr; Back</button><span></span></div>
+            </fieldset>
+
+            <fieldset class="fstep" data-step="3" style="border:none;margin:0;padding:0;">
+              <div class="field"><label for="ap-name">Your name</label><input id="ap-name" type="text" name="name" required placeholder="Jane Doe" /></div>
+              <div class="field"><label for="ap-company">Company</label><input id="ap-company" type="text" name="company" required placeholder="Acme Industries, Inc." /></div>
+              <div class="field"><label for="ap-phone">Direct phone</label><input id="ap-phone" type="tel" name="phone" required placeholder="(555) 555-0100" /></div>
+              <label class="consent">
+                <input type="checkbox" name="Consent to Contact" value="Yes — agreed to receive calls and texts, including automated and AI voice" required />
+                <span>I agree to receive calls and text messages from TVT Capital at the number provided — including calls and texts placed using automated dialing technology, prerecorded or artificial-voice messages, and artificial-intelligence (AI) voice agents — regarding my funding inquiry. Message frequency varies. Message and data rates may apply. Reply <strong>HELP</strong> for help, <strong>STOP</strong> to opt out. Consent is not a condition of any purchase. See our <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Messaging Terms</a>.</span>
+              </label>
+              <button class="btn btn-primary" type="submit" style="width:100%;">Get a term sheet <span class="arrow" aria-hidden="true">&rarr;</span></button>
+              <div class="fstep-nav" style="justify-content:flex-start;"><button type="button" class="fstep-back" data-back>&larr; Back</button></div>
+              <p class="form-note">Confidential. A senior underwriter typically reaches out the same business day.</p>
+            </fieldset>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section paper">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">What happens next</div>
+      <h2 class="h-lg">After you hit submit.</h2>
+    </div>
+    <div class="grid cols-4">
+      <div class="card reveal"><div class="tag">Step 01</div><h3>Same business day</h3><p class="body">Intake acknowledged. Your file is assigned to a senior underwriter.</p></div>
+      <div class="card reveal" data-reveal-delay="60"><div class="tag">Step 02</div><h3>Discovery call</h3><p class="body">A 30-minute call to discuss the deal, structure, and timeline.</p></div>
+      <div class="card reveal" data-reveal-delay="120"><div class="tag">Step 03</div><h3>Typically within 24 hr</h3><p class="body">Indicative term sheet issued. Plain English.</p></div>
+      <div class="card reveal" data-reveal-delay="180"><div class="tag">Step 04</div><h3>Typically days 7 &ndash; 10</h3><p class="body">Subject to underwriting and standard close conditions, funds wire to the operating account.</p></div>
+    </div>
+    <p class="mono-note mt-24 reveal">Timing reflects typical experience and is not a commitment. See <a href="disclosures.html">Disclosures</a>.</p>
+  </div>
+</section>

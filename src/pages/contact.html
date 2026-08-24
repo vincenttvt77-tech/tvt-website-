@@ -1,0 +1,61 @@
+<section class="dark-panel">
+  <div class="wrap page-hero">
+    <div class="eyebrow on-dark reveal">Contact</div>
+    <h1 class="h-xl reveal" data-reveal-delay="80" style="color:#fff;">Real humans. <span class="italic-accent">Real answers.</span></h1>
+    <div class="hero-rule reveal" data-reveal-delay="150"></div>
+    <p class="lede on-dark reveal" data-reveal-delay="190">We answer the phone and reply to email quickly during business hours. For funding inquiries, the fastest path is the apply page.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="intake-grid">
+      <div class="reveal">
+        <div class="eyebrow">Send a message</div>
+        <h2 class="h-lg" style="margin-top:24px;">Tell us what you need.</h2>
+        <p class="lede" style="margin-top:22px; max-width:46ch;">For funding inquiries, you'll get the fastest path through the <a href="apply.html" style="color:var(--forest-700);">apply page</a>. For everything else — partner program, press, general questions — use this form.</p>
+        <dl class="spec-table" style="margin-top:44px;">
+          <div class="spec-row"><dt>Phone</dt><dd><a href="tel:+15555555555" style="color:var(--forest-700);">(555) 555-5555</a> · Mon&ndash;Fri, business hours ET</dd></div>
+          <div class="spec-row"><dt>Email</dt><dd><a href="mailto:info@tvtcapital.com" style="color:var(--forest-700);">info@tvtcapital.com</a></dd></div>
+          <div class="spec-row"><dt>Borrowers</dt><dd><a href="apply.html" style="color:var(--forest-700);">Request a term sheet</a></dd></div>
+          <div class="spec-row"><dt>Intermediaries</dt><dd><a href="partners.html" style="color:var(--forest-700);">Partner program</a></dd></div>
+        </dl>
+      </div>
+
+      <div class="form-card reveal" data-reveal-delay="120">
+        <div class="form-eyebrow">General enquiry</div>
+        <h3>Get in touch</h3>
+        <form name="contact-message" method="POST" action="https://api.web3forms.com/submit">
+          <input type="hidden" name="access_key" value="32e30523-8376-42b6-ad15-d191e411789d" />
+          <input type="hidden" name="subject" value="New contact message — TVT Capital site" />
+          <input type="hidden" name="from_name" value="TVT Capital Website" />
+          <input type="hidden" name="redirect" value="https://tvt-capital.vercel.app/thanks.html" />
+          <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" aria-hidden="true" />
+          <div class="form-grid">
+            <div class="field">
+              <label>Reason for contact</label>
+              <div class="pill-group">
+                <label><input type="radio" name="Reason" value="Funding inquiry" required /><span class="pill-face">Funding inquiry</span></label>
+                <label><input type="radio" name="Reason" value="Partner program" /><span class="pill-face">Partner program</span></label>
+                <label><input type="radio" name="Reason" value="Press / media" /><span class="pill-face">Press / media</span></label>
+                <label><input type="radio" name="Reason" value="Other" /><span class="pill-face">Other</span></label>
+              </div>
+            </div>
+            <div class="form-grid two" style="margin-top:0;">
+              <div class="field"><label for="ct-name">Your name</label><input id="ct-name" type="text" name="name" required /></div>
+              <div class="field"><label for="ct-company">Company</label><input id="ct-company" type="text" name="company" /></div>
+              <div class="field"><label for="ct-email">Email</label><input id="ct-email" type="email" name="email" required /></div>
+              <div class="field"><label for="ct-phone">Phone</label><input id="ct-phone" type="tel" name="phone" required /></div>
+            </div>
+            <div class="field"><label for="ct-msg">What can we help with?</label><textarea id="ct-msg" name="message" required></textarea></div>
+            <label class="consent">
+              <input type="checkbox" name="Consent to Contact" value="Yes — agreed to receive calls and texts, including automated and AI voice" required />
+              <span>I agree to receive calls and text messages from TVT Capital at the number provided — including calls and texts placed using automated dialing technology, prerecorded or artificial-voice messages, and artificial-intelligence (AI) voice agents — regarding my inquiry. Message frequency varies. Message and data rates may apply. Reply <strong>HELP</strong> for help, <strong>STOP</strong> to opt out. Consent is not a condition of any purchase. See our <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Messaging Terms</a>.</span>
+            </label>
+            <button class="btn btn-primary" type="submit" style="width:100%;">Send message <span class="arrow" aria-hidden="true">&rarr;</span></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
