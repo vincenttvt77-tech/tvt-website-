@@ -120,6 +120,7 @@ html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
 body {
   margin: 0;
   font-family: var(--font-text);
+  font-variant-numeric: oldstyle-nums;
   font-size: 17px;
   line-height: 1.72;
   color: var(--ink);
@@ -157,7 +158,7 @@ h1, h2, h3, h4 {
 .hero .italic-accent,
 .banner-cta .italic-accent { color: inherit; }
 
-.tnum { font-variant-numeric: tabular-nums; }
+.tnum { font-variant-numeric: tabular-nums lining-nums; }
 
 /* Eyebrow — engraved small caps struck through a rule */
 .eyebrow {
@@ -305,8 +306,18 @@ h1, h2, h3, h4 {
   box-shadow: 0 1px 0 var(--silver-400);
 }
 .nav-bar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: 84px; }
-.nav-logo { display: flex; align-items: center; text-decoration: none; }
+.nav-logo { display: flex; align-items: center; gap: 16px; text-decoration: none; }
 .nav-logo img { height: 46px; width: auto; }
+/* A house descriptor set against the mark, divided by a rule — the way a
+   bank's letterhead carries its business under its name. */
+.nav-lockup {
+  font-family: var(--font-sans); font-size: 8.5px; font-weight: 600;
+  letter-spacing: .18em; text-transform: uppercase; line-height: 1.75;
+  color: var(--ink-mute); padding-left: 16px;
+  border-left: 1px solid var(--rule-strong);
+  white-space: nowrap;   /* the break is set by the <br>, not by the column */
+}
+@media (max-width: 1240px) { .nav-lockup { display: none; } }
 
 .nav-links { display: flex; gap: 26px; align-items: center; }
 .nav-links a {
@@ -346,7 +357,12 @@ h1, h2, h3, h4 {
 .nav-mobile .btn { margin-top: 20px; }
 
 /* ---------- Dark panels & hero ---------- */
-.hero, .dark-panel { position: relative; overflow: hidden; background: var(--navy-900); color: var(--parchment); }
+.hero, .dark-panel {
+  position: relative; overflow: hidden;
+  background: var(--ink-900); color: var(--paper);
+  border-top: 3px double var(--silver-700);
+  border-bottom: 3px double var(--silver-700);
+}
 .hero::before, .dark-panel::before {
   content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 1;
   background:
@@ -355,6 +371,11 @@ h1, h2, h3, h4 {
 }
 /* .hero.tall is a flex container, so the wrap would otherwise shrink to fit
    its content and drift off the page's left margin. */
+.hero::after, .dark-panel::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 1;
+  background-image: repeating-linear-gradient(
+    135deg, rgba(242,239,230,.030) 0 1px, transparent 1px 7px);
+}
 .hero > .wrap, .dark-panel > .wrap { position: relative; z-index: 2; width: 100%; }
 
 
@@ -383,7 +404,7 @@ h1, h2, h3, h4 {
 .hero-stats > div:last-child { border-right: none; }
 .hero-stats .num {
   font-family: var(--font-display); font-size: clamp(26px, 3vw, 40px);
-  line-height: 1; font-variant-numeric: tabular-nums; color: var(--parchment);
+  line-height: 1; font-variant-numeric: tabular-nums lining-nums; color: var(--paper);
 }
 .hero-stats .cap {
   margin-top: 12px; font-family: var(--font-sans); font-size: 9.5px; font-weight: 600;
@@ -456,7 +477,9 @@ a.card:hover .link-hint { color: var(--oxblood); }
 .card h3 { font-size: clamp(20px, 1.5vw, 24px); margin-top: 14px; }
 .card .tag {
   font-family: var(--font-sans); font-size: 9.5px; font-weight: 700;
-  letter-spacing: .24em; text-transform: uppercase; color: var(--gold-600);
+  letter-spacing: .24em; text-transform: uppercase; color: var(--silver-700);
+  padding-bottom: 12px; border-bottom: 1px solid var(--rule);
+  display: block; width: fit-content;
 }
 .card p.body { margin-top: 13px; font-size: 16px; line-height: 1.66; color: var(--ink-soft); max-width: 46ch; }
 .card ul.points {
@@ -502,7 +525,7 @@ a.card:hover .link-hint { color: var(--oxblood); }
 .stat-band > div:last-child { border-right: none; }
 .stat-band .num {
   font-family: var(--font-display); font-size: clamp(28px, 3.2vw, 44px);
-  line-height: 1; font-variant-numeric: tabular-nums; color: var(--navy-900);
+  line-height: 1; font-variant-numeric: tabular-nums lining-nums; color: var(--ink-900);
 }
 .stat-band .cap {
   margin-top: 12px; font-family: var(--font-sans); font-size: 9.5px; font-weight: 600;
@@ -626,7 +649,10 @@ a.card:hover .link-hint { color: var(--oxblood); }
 @media (max-width: 1000px) { .intake-grid { grid-template-columns: 1fr; gap: 44px; } }
 
 /* ---------- Ruled schedule ---------- */
-.spec-table { border-top: 2px solid var(--navy-900); }
+.spec-table {
+  border-top: 3px double var(--rule-strong);
+  border-bottom: 1px solid var(--rule-strong);
+}
 .spec-row {
   display: grid; grid-template-columns: 260px 1fr; gap: 28px;
   padding: 18px 0; border-bottom: 1px solid var(--rule);
@@ -635,7 +661,12 @@ a.card:hover .link-hint { color: var(--oxblood); }
   font-family: var(--font-sans); font-size: 10px; font-weight: 700;
   letter-spacing: .2em; text-transform: uppercase; color: var(--ink-mute); padding-top: 5px;
 }
-.spec-row dd { margin: 0; font-size: 17px; color: var(--ink); font-variant-numeric: tabular-nums; }
+.spec-row dd {
+  margin: 0; font-size: 17px; color: var(--ink);
+  font-variant-numeric: tabular-nums lining-nums;
+}
+/* Alternate rows carry the faintest tint, as ruled ledger paper does. */
+.spec-row:nth-child(even) { background: rgba(22, 24, 15, .022); }
 @media (max-width: 700px) { .spec-row { grid-template-columns: 1fr; gap: 5px; } }
 
 /* ---------- Timeline ---------- */
@@ -646,7 +677,10 @@ a.card:hover .link-hint { color: var(--oxblood); }
   transition: padding-left .3s cubic-bezier(.2,.7,.3,1);
 }
 .tl-step:hover { padding-left: 10px; }
-.tl-step .n { font-family: var(--font-display); font-size: 32px; line-height: 1; color: var(--oxblood); font-variant-numeric: tabular-nums; }
+.tl-step .n {
+  font-family: var(--font-display); font-size: 30px; line-height: 1;
+  color: var(--ink-700); letter-spacing: .06em;
+}
 .tl-step h3 { font-size: clamp(21px, 1.9vw, 27px); display: flex; align-items: baseline; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
 .tl-step h3 .time {
   font-family: var(--font-sans); font-size: 9.5px; font-weight: 700;
