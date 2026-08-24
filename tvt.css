@@ -26,7 +26,7 @@
 
   /* --- Antique brass accent --- */
   --brass-700: #7d5f28;
-  --brass-600: #96733a;
+  --brass-600: #846533;
   --brass:     #b1894a;
   --brass-400: #c9a869;
   --brass-300: #ddc596;
@@ -35,7 +35,7 @@
   /* --- Ink --- */
   --ink:      #16241e;
   --ink-soft: #45564e;
-  --ink-mute: #78877f;
+  --ink-mute: #616d67;
 
   /* --- Hairlines --- */
   --rule:        rgba(22, 36, 30, .14);
@@ -538,7 +538,9 @@ a.card:hover .link-hint { color: var(--brass-600); }
 .form-grid.two { grid-template-columns: 1fr 1fr; }
 @media (max-width: 560px) { .form-grid.two { grid-template-columns: 1fr; } }
 
-.field label {
+/* Direct child only — the option rows inside .pill-group are labels too,
+   and must not inherit the small-caps treatment. */
+.field > label {
   display: block; font-size: 12px; font-weight: 600; letter-spacing: .1em;
   text-transform: uppercase; color: var(--ink-mute); margin-bottom: 9px;
 }
@@ -559,7 +561,10 @@ a.card:hover .link-hint { color: var(--brass-600); }
 /* Selectable option rows */
 .pill-group { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
 .pill-group.stack { grid-template-columns: 1fr; }
-.pill-group label { position: relative; display: block; cursor: pointer; }
+.pill-group label {
+  position: relative; display: block; cursor: pointer;
+  text-transform: none; letter-spacing: normal; font-weight: 400; margin-bottom: 0;
+}
 .pill-group input { position: absolute; opacity: 0; pointer-events: none; }
 .pill-group .pill-face {
   display: flex; align-items: center; gap: 12px;
@@ -603,7 +608,7 @@ a.card:hover .link-hint { color: var(--brass-600); }
   background: var(--forest-850); color: #fff;
   border-color: var(--rule-dark); border-top-color: var(--brass);
 }
-.form-card.on-dark .field label { color: var(--brass-300); }
+.form-card.on-dark .field > label { color: var(--brass-300); }
 .form-card.on-dark .field input, .form-card.on-dark .field select, .form-card.on-dark .field textarea {
   color: #fff; border-bottom-color: var(--rule-dark);
 }
@@ -700,17 +705,17 @@ a.card:hover .link-hint { color: var(--brass-600); }
 .prose hr { border: none; height: 1px; background: var(--rule); margin: 2.6em 0; }
 
 /* ---------- Coverage map ---------- */
-.tile-map { display: grid; grid-template-columns: repeat(12, 1fr); gap: 5px; }
+.tile-map { display: grid; grid-template-columns: repeat(12, 1fr); gap: 5px; max-width: 780px; }
 .tile-map span {
   aspect-ratio: 1; display: grid; place-items: center; border-radius: 1px;
-  font-size: 10px; font-weight: 500; letter-spacing: .04em;
-  background: rgba(255,255,255,.055); color: rgba(255,255,255,.6);
-  border: 1px solid transparent;
+  font-size: 9.5px; font-weight: 500; letter-spacing: .06em;
+  background: transparent; color: rgba(255, 255, 255, .58);
+  border: 1px solid var(--rule-dark-2);
   transition: background .18s ease, color .18s ease, border-color .18s ease;
 }
-.tile-map span:hover { background: var(--brass); color: var(--forest-950); border-color: var(--brass-300); }
+.tile-map span:hover { background: var(--brass); color: var(--forest-950); border-color: var(--brass); }
 .tile-map i { display: block; }
-@media (max-width: 640px) { .tile-map span { font-size: 8px; } .tile-map { gap: 3px; } }
+@media (max-width: 640px) { .tile-map span { font-size: 7.5px; } .tile-map { gap: 3px; } }
 
 /* ---------- Banner CTA ---------- */
 .banner-cta {
@@ -769,7 +774,7 @@ footer.site ul a:hover { color: #fff; }
 
 .foot-compliance {
   margin-top: 40px; font-size: 11.5px; line-height: 1.7;
-  color: rgba(255,255,255,.42); max-width: 92ch;
+  color: rgba(255,255,255,.5); max-width: 92ch;
 }
 .foot-compliance a { color: rgba(255,255,255,.62); }
 .foot-legal {
@@ -783,7 +788,7 @@ footer.site ul a:hover { color: #fff; }
 .foot-credit {
   margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--rule-dark-2);
   text-align: center; font-size: 10px; font-weight: 600; letter-spacing: .22em;
-  text-transform: uppercase; color: rgba(255,255,255,.3);
+  text-transform: uppercase; color: rgba(255,255,255,.5);
 }
 .foot-credit a { color: rgba(255,255,255,.48); text-decoration: none; }
 .foot-credit a:hover { color: rgba(255,255,255,.8); }
