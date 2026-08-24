@@ -41,8 +41,15 @@ def read(p):
     return p.read_text(encoding="utf-8")
 
 
+MIME = {".svg": "image/svg+xml", ".png": "image/png", ".jpg": "image/jpeg"}
+
+
 def data_uri(path):
-    return "data:image/svg+xml;base64," + base64.b64encode(path.read_bytes()).decode()
+    """Inline an asset, or return None when it has not been fetched yet."""
+    if not path.exists():
+        return None
+    mime = MIME.get(path.suffix, "application/octet-stream")
+    return "data:%s;base64,%s" % (mime, base64.b64encode(path.read_bytes()).decode())
 
 
 def route_links(html):
@@ -60,8 +67,11 @@ def build():
     js = read(ROOT / "tvt.js")
     meta = json.loads(read(ROOT / "src" / "pages.json"))
 
-    wordmark = data_uri(ROOT / "assets" / "tvt-wordmark.svg")
-    wordmark_light = data_uri(ROOT / "assets" / "tvt-wordmark-light.svg")
+    # The brand mark is not committed (see scripts/fetch-assets.sh). Inline it
+    # when present; otherwise fall back to a set wordmark so the nav still reads.
+    logo = data_uri(ROOT / "assets" / "tvt-logo.png")
+    logo_tag = ('<img src="%s" alt="TVT Capital" />' % logo) if logo else \
+        '<span class="pv-wordmark">TVT<i>Capital</i></span>'
 
     # --- shared chrome -------------------------------------------------
     sys.path.insert(0, str(ROOT))
@@ -72,18 +82,32 @@ def build():
     for token in ("A_SOLUTIONS", "A_PROCESS", "A_INDUSTRIES", "A_COVERAGE",
                   "A_TRACK", "A_PARTNERS", "A_CREDITMATCH"):
         chrome = chrome.replace("{{%s}}" % token, "")
-    chrome = route_links(chrome).replace("assets/tvt-wordmark.svg", wordmark)
+    chrome = route_links(chrome).replace(
+        '<img src="assets/tvt-logo.png" alt="TVT Capital" />', logo_tag)
 
     footer = read(PARTIALS / "footer.html")
     footer = footer.split('<script src="tvt.js"')[0]
-    footer = route_links(footer).replace("assets/tvt-wordmark-light.svg", wordmark_light)
+    footer = route_links(footer).replace(
+        '<img src="assets/tvt-logo.png" alt="TVT Capital" />', logo_tag)
 
     cta = route_links(read(PARTIALS / "cta.html"))
+
+    # Inline the photographic plates when they have been fetched; drop the
+    # reference when they have not, so no broken request is made.
+    def inline_plates(html):
+        for name in ("facade", "boardroom", "engraving", "ledger"):
+            ref = "assets/img/%s.jpg" % name
+            if ref not in html:
+                continue
+            uri = data_uri(ROOT / "assets" / "img" / ("%s.jpg" % name))
+            html = html.replace(ref, uri) if uri else html.replace(
+                'style="background-image:url(%s)"' % ref, 'hidden')
+        return html
 
     # --- page stack ----------------------------------------------------
     sections = []
     for slug in ORDER:
-        body = route_links(read(PAGES / ("%s.html" % slug)))
+        body = inline_plates(route_links(read(PAGES / ("%s.html" % slug))))
         tail = cta if meta.get(slug, {}).get("cta", True) else ""
         sections.append(
             '<div class="pv-page" id="page-%s" data-page="%s" hidden>\n%s\n%s</div>'
@@ -111,6 +135,16 @@ def build():
 
     preview_css = '''
 /* ---- preview shell (not part of the site) ---- */
+.pv-wordmark {
+  font-family: var(--font-display); font-size: 26px; color: var(--navy-900);
+  letter-spacing: .02em; line-height: 1; display: block;
+}
+.pv-wordmark i {
+  display: block; font-style: normal; font-family: var(--font-sans);
+  font-size: 9px; font-weight: 700; letter-spacing: .38em;
+  color: var(--gold-600); margin-top: 5px;
+}
+footer.site .pv-wordmark { color: var(--navy-900); }
 .pv-page[hidden] { display: none; }
 .pv-note {
   position: fixed; left: 16px; bottom: 16px; z-index: 200;

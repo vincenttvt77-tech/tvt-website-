@@ -804,3 +804,10 @@ footer.site ul a:hover { color: var(--parchment); }
   background-size: contain;
   opacity: .5; filter: sepia(28%) saturate(120%);
 }
+
+/* Small caps at this tracking are wide; keep each nav item on one line. */
+.nav-links a { white-space: nowrap; }
+@media (max-width: 1320px) {
+  .nav-links { gap: 20px; }
+  .nav-links a { font-size: 10px; letter-spacing: .12em; }
+}
