@@ -852,3 +852,59 @@ footer.site ul a:hover { color: var(--parchment); }
   .nav-links { gap: 20px; }
   .nav-links a { font-size: 10px; letter-spacing: .12em; }
 }
+
+/* ============================================================
+   Phones
+   The layout is set desktop-first and narrows down. What matters
+   on a handset is that standalone controls are thumb-sized and
+   the small print is still readable — inline links inside a
+   paragraph are deliberately left alone, since padding them out
+   would wreck the line rhythm (and WCAG exempts them).
+   ============================================================ */
+@media (max-width: 780px) {
+  /* --- standalone controls get a 44px target --- */
+  footer.site ul { gap: 0; }
+  footer.site ul a { display: block; padding: 11px 0; font-size: 15.5px; }
+  .foot-contact { gap: 0; }
+  .foot-contact a { padding: 10px 0; }
+  .foot-legal { gap: 8px; }
+  .foot-legal nav { gap: 0 22px; flex-wrap: wrap; }
+  .foot-legal a { display: inline-block; padding: 11px 0; }
+  .announce a.pill { padding: 13px 0; }
+  .link-arrow { padding-top: 12px; padding-bottom: 14px; }
+  .nav-mobile a { padding: 16px 2px; }
+  .card .link-hint { padding-top: 22px; padding-bottom: 8px; }
+
+  /* links that stand alone in a schedule row or a colophon */
+  .spec-row dd a { display: inline-block; padding: 10px 0; }
+  .foot-credit a { display: inline-block; padding: 12px 6px; }
+  .notice-strip a { display: inline-block; padding: 8px 0; }
+
+  /* --- small print, sized to actually be read --- */
+  .card ul.points li { font-size: 14px; }
+  .mono-note { font-size: 13px; }
+  .form-note { font-size: 12.5px; }
+  .consent { font-size: 13px; line-height: 1.65; }
+  .consent input { width: 20px; height: 20px; }
+  .foot-compliance { font-size: 12.5px; }
+  .foot-brand p { font-size: 15px; }
+  .foot-legal { font-size: 12.5px; }
+  .ticker .track span { font-size: 12px; }
+  .announce { font-size: 12.5px; }
+
+  /* --- the schedule reads as label-over-value --- */
+  .spec-row { padding: 16px 0; }
+  .spec-row dt { font-size: 10.5px; }
+
+  /* --- the double rules are heavy at this size --- */
+  .hero, .dark-panel { border-top-width: 2px; border-bottom-width: 2px; }
+  .banner-cta.dark { border-width: 2px; }
+}
+
+@media (max-width: 640px) {
+  /* The coverage map is a fixed 12-column grid, so on a narrow screen its
+     cells shrink past legibility. Let it scroll in its own track instead. */
+  .tile-map-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-inline: calc(var(--gutter) * -1); padding-inline: var(--gutter); }
+  .tile-map { min-width: 460px; }
+  .tile-map span { font-size: 9px; }
+}
