@@ -47,6 +47,17 @@ as generic:
 - **Sections are divided, not spaced.** Hairlines, double rules on panel edges,
   and ruled tables (`.spec-table`, `.stat-band`, `.timeline`, `.schedule-panel`)
   in place of cards with shadows.
+- **Everything is set in the serif.** `--font-sans` is an alias onto the Caslon
+  text face, so eyebrows, buttons, nav, and figure captions are letterspaced
+  serif caps rather than a grotesque. That single substitution does more to date
+  the page than any amount of ornament.
+- **Running text is justified** (`.prose`), with hyphenation, unjustified below
+  560px where the measure is too short to space evenly.
+
+The masthead is two ruled rows — the house, its business and its telephone
+above; the navigation ruled off beneath and set across the full measure. It is
+not only a period arrangement: the lockup and seven nav items cannot fit one
+1100px row without colliding, so a single row was structurally wrong.
 
 The palette is sampled from the logo — deep green through emerald, with the
 globe's silver as the secondary. Older token names (`--navy-900`, `--gold`,

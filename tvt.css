@@ -47,7 +47,7 @@
   /* --- Type --- */
   --font-display: "Libre Caslon Display", "Big Caslon", "Hoefler Text", Georgia, serif;
   --font-text: "Libre Caslon Text", "Hoefler Text", Georgia, "Times New Roman", serif;
-  --font-sans: "Libre Franklin", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-sans: "Libre Caslon Text", "Hoefler Text", Georgia, "Times New Roman", serif;
 
   --wrap: 1100px;
   --wrap-narrow: 720px;
@@ -293,56 +293,69 @@ h1, h2, h3, h4 {
 }
 .announce a.pill:hover { color: var(--gold-400); border-color: var(--gold-400); }
 
-/* ---------- Nav ---------- */
+/* ---------- Masthead ----------
+   Two ruled rows, the way a house sets its letterhead: the name, its business
+   and its telephone above; the navigation ruled off beneath, set across the
+   full measure. One row could not hold both without the lockup running into
+   the first nav item at every width. */
 .nav-bar {
   position: sticky; top: 0; z-index: 60;
   background: var(--paper);
   border-bottom: 3px double var(--ink-900);
-  box-shadow: none;
 }
-.nav-bar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: 74px; }
+.masthead .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: 72px; }
 .nav-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
 .nav-logo img { height: 40px; width: auto; }
-/* A house descriptor set against the mark, divided by a rule — the way a
-   bank's letterhead carries its business under its name. */
 .nav-lockup {
   font-family: var(--font-sans); font-size: 8px; font-weight: 700;
-  letter-spacing: .17em; text-transform: uppercase; line-height: 1.8;
+  letter-spacing: .16em; text-transform: uppercase; line-height: 1.85;
   color: var(--ink-mute); padding-left: 14px;
   border-left: 1px solid var(--rule-strong);
   white-space: nowrap;   /* the break is set by the <br>, not by the column */
 }
-@media (max-width: 1240px) { .nav-lockup { display: none; } }
+@media (max-width: 620px) { .nav-lockup { display: none; } }
 
-.nav-links { display: flex; gap: 22px; align-items: center; }
-.nav-links a {
-  position: relative; font-family: var(--font-sans);
-  font-size: 10px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase;
-  color: var(--ink-soft); text-decoration: none; padding: 8px 0;
+.nav-cta { display: flex; gap: 20px; align-items: center; }
+.nav-cta .btn { white-space: nowrap; }
+.nav-tel {
+  font-family: var(--font-sans); font-size: 9.5px; font-weight: 700;
+  letter-spacing: .16em; text-transform: uppercase; color: var(--ink-soft);
+  text-decoration: none; white-space: nowrap;
   border-bottom: 1px solid transparent;
+}
+.nav-tel:hover { color: var(--ink-900); border-bottom-color: var(--ink-900); }
+@media (max-width: 900px) { .nav-tel { display: none; } }
+
+.navrow { border-top: 1px solid var(--rule-strong); }
+.navrow .wrap { display: flex; }
+.nav-links { display: flex; width: 100%; justify-content: space-between; align-items: stretch; }
+.nav-links a {
+  font-family: var(--font-sans);
+  font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--ink-soft); text-decoration: none;
+  padding: 12px 0 11px; white-space: nowrap;
+  border-bottom: 2px solid transparent;
 }
 .nav-links a:hover, .nav-links a.active { color: var(--ink-900); border-bottom-color: var(--ink-900); }
 
-.nav-cta { display: flex; gap: 16px; align-items: center; }
-.nav-cta .btn { white-space: nowrap; }
 .nav-toggle {
   display: none; background: none; border: 1px solid var(--rule-strong);
   border-radius: 0; width: 44px; height: 44px; cursor: pointer; font-size: 16px; color: var(--ink);
 }
-@media (max-width: 1120px) {
-  .nav-links, .nav-cta { display: none; }
+@media (max-width: 1024px) {
+  .navrow, .nav-cta { display: none; }
   .nav-toggle { display: grid; place-items: center; }
   .nav-bar.open .nav-mobile { display: flex; }
 }
 .nav-mobile {
   display: none; flex-direction: column;
   padding: 8px var(--gutter) 24px;
-  border-top: 1px solid var(--rule); background: var(--parchment);
+  border-top: 1px solid var(--rule); background: var(--paper);
 }
 .nav-mobile a {
   padding: 15px 2px; text-decoration: none; color: var(--ink);
   border-bottom: 1px solid var(--rule);
-  font-family: var(--font-sans); font-size: 12px; letter-spacing: .14em; text-transform: uppercase;
+  font-family: var(--font-sans); font-size: 12px; letter-spacing: .12em; text-transform: uppercase;
 }
 .nav-mobile .btn { margin-top: 20px; }
 
@@ -727,7 +740,15 @@ a.card:hover .link-hint { border-bottom-color: currentColor; }
 .faq .a { padding: 0 0 20px; max-width: 76ch; color: var(--ink-soft); font-size: 15.5px; }
 
 /* ---------- Prose ---------- */
-.prose { max-width: 70ch; color: var(--ink-soft); font-size: 16.5px; line-height: 1.72; }
+/* Set like a printed page: justified with hyphenation. At this measure the
+   spacing stays even, and it is the strongest single cue that the text was
+   composed rather than poured into a column. */
+.prose {
+  max-width: 70ch; color: var(--ink-soft); font-size: 16.5px; line-height: 1.72;
+  text-align: justify; hyphens: auto; -webkit-hyphens: auto;
+}
+.prose h2, .prose h3, .prose blockquote { text-align: left; hyphens: manual; }
+@media (max-width: 560px) { .prose { text-align: left; } }
 .prose > *:first-child { margin-top: 0; }
 .prose p { margin: 1.2em 0; }
 .prose h2 { font-size: 25px; margin: 1.8em 0 .5em; color: var(--ink); }
@@ -858,12 +879,7 @@ footer.site ul a:hover { color: var(--parchment); }
 /* Centre the eyebrow inside the home hero, matching the sub-page heroes. */
 
 
-/* Small caps at this tracking are wide; keep each nav item on one line. */
-.nav-links a { white-space: nowrap; }
-@media (max-width: 1320px) {
-  .nav-links { gap: 20px; }
-  .nav-links a { font-size: 10px; letter-spacing: .12em; }
-}
+
 
 /* ============================================================
    Phones
