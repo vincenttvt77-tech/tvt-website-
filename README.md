@@ -30,6 +30,29 @@ the source — the site is served straight from the repo, so stale output ships.
 
 `build.py` fails loudly if a `{{PLACEHOLDER}}` survives assembly.
 
+## House style
+
+The site is set like a lender's printed material rather than a product landing
+page. Four rules carry most of it — breaking them is what makes the pages read
+as generic:
+
+- **Headings are titles, not slogans.** `Bridge Loans`, `Terms and Structure`,
+  `How a Facility Is Underwritten` — Title Case noun phrases naming what the
+  section is. No `Short phrase. Italic fragment.` constructions, no second
+  person (`You've capped out on senior`), no wordplay in a heading.
+- **Type is sized off a page.** `.h-xl` tops out at 47px, body is 16px. Nothing
+  is set at billboard scale; density does the work instead of size.
+- **The page arrives set.** `.reveal` is inert, hover states are colour and
+  rule changes only, and the deal ticker is the one thing that moves.
+- **Sections are divided, not spaced.** Hairlines, double rules on panel edges,
+  and ruled tables (`.spec-table`, `.stat-band`, `.timeline`, `.schedule-panel`)
+  in place of cards with shadows.
+
+The palette is sampled from the logo — deep green through emerald, with the
+globe's silver as the secondary. Older token names (`--navy-900`, `--gold`,
+`--forest-700`, …) are kept as aliases in `:root` because inline styles through
+the page bodies still reference them; they all resolve onto the current palette.
+
 ## Adding a page
 
 1. Write the body in `src/pages/<slug>.html` (content only — no `<head>`, nav, or footer).

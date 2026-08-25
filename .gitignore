@@ -9,3 +9,7 @@ preview.html
 # materialised by scripts/fetch-assets.sh
 assets/*.png
 assets/img/
+
+# local audit tooling only
+package.json
+package-lock.json

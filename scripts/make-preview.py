@@ -258,9 +258,9 @@ footer.site .pv-wordmark { color: var(--navy-900); }
     doc.append("<title>TVT Capital Redesign</title>")
     doc.append('<link rel="preconnect" href="https://fonts.googleapis.com" />')
     doc.append('<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />')
-    doc.append('<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,'
-               'wght@0,9..144,300..600;1,9..144,300..500&family=Inter:wght@400;500;600'
-               '&display=swap" rel="stylesheet" />')
+    doc.append('<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display'
+               '&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400'
+               '&family=Libre+Franklin:wght@400;600;700&display=swap" rel="stylesheet" />')
     doc.append("<style>\n%s\n%s</style>" % (css, preview_css))
     doc.append(chrome)
     doc.append("\n".join(sections))
