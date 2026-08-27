@@ -64,6 +64,29 @@ def ticker_markup():
     return (row + row).rstrip("\n")
 
 
+def crumb_markup(meta):
+    """A trail back to the front page, the way a site of this kind is signposted.
+
+    Each entry is "Label" or "Label|slug"; the last one is the current page and
+    is not a link. The home page gets no trail.
+    """
+    trail = meta.get("crumb")
+    if not trail:
+        return ""
+    parts = ['<a href="index.html">Home</a>']
+    for i, entry in enumerate(trail):
+        label, _, target = entry.partition("|")
+        last = i == len(trail) - 1
+        if last or not target:
+            parts.append('<span aria-current="page">{}</span>'.format(label)
+                         if last else "<span>{}</span>".format(label))
+        else:
+            parts.append('<a href="{}.html">{}</a>'.format(target, label))
+    sep = '<i aria-hidden="true">&rsaquo;</i>'
+    return ('<nav class="crumbs" aria-label="Breadcrumb"><div class="wrap">'
+            + sep.join(parts) + "</div></nav>\n")
+
+
 def build_page(slug, meta, partials):
     body = read(PAGES / "{}.html".format(slug))
 
@@ -81,7 +104,7 @@ def build_page(slug, meta, partials):
 
     tail = (partials["cta"] if meta.get("cta", True) else "") + partials["footer"]
 
-    return head + chrome + "\n" + body.rstrip("\n") + "\n\n" + tail
+    return head + chrome + crumb_markup(meta) + body.rstrip("\n") + "\n\n" + tail
 
 
 def main():
