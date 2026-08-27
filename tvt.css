@@ -24,15 +24,6 @@
   --ink-600: #007530;
   --ink-500: #00a040;   /* logo bright green */
 
-  /* --- The accent ramp: light values for dark grounds, dark ones for
-       paper, all drawn off the globe's silver. --- */
-  --accent-200: #dfe1e3;
-  --accent-300: #c0c0c0;
-  --accent-400: #a9adb1;
-  --accent-500: #8f9499;
-  --accent-600: #6d7275;
-  --accent-700: #575c60;
-
   /* --- Silver, from the globe --- */
   --silver-800: #4c5154;
   --silver-700: #5e6366;
@@ -75,12 +66,12 @@
   --oxblood:     var(--ink-700);
   --oxblood-600: var(--ink-600);
   --oxblood-300: var(--ink-500);
-  --gold-700: var(--accent-700);
-  --gold-600: var(--accent-700);
-  --gold:     var(--accent-500);
-  --gold-400: var(--accent-400);
-  --gold-300: var(--accent-300);
-  --gold-200: var(--accent-200);
+  --gold-700: var(--silver-700);
+  --gold-600: var(--silver-700);
+  --gold:     var(--silver);
+  --gold-400: var(--silver-300);
+  --gold-300: var(--silver-300);
+  --gold-200: var(--silver-200);
   --forest-950: var(--ink-950);
   --forest-900: var(--ink-900);
   --forest-850: var(--ink-850);
@@ -91,7 +82,12 @@
   --forest-300: var(--silver-300);
   --forest-200: var(--silver-200);
   --forest-100: var(--paper-2);
-  --accent: var(--accent-500);
+  --brass-700: var(--silver-700);
+  --brass-600: var(--silver-700);
+  --brass:     var(--silver);
+  --brass-400: var(--silver-300);
+  --brass-300: var(--silver-200);
+  --brass-200: var(--silver-200);
   --green-950: var(--ink-950);
   --green-900: var(--ink-900);
   --green-800: var(--ink-800);
@@ -150,14 +146,9 @@ h1, h2, h3, h4 {
 /* ---------- Type scale ---------- */
 /* Sized off a printed page. Nothing here is set larger than a title page
    would set it — the oversized web headline is the giveaway of a new house. */
-/* Titles are set in letterspaced capitals — the way a firm of this period
-   cut its name into a lobby wall and printed it on a prospectus cover. */
-.h-xl, .h-lg, .h-md {
-  text-transform: uppercase; letter-spacing: .055em; font-weight: 400;
-}
-.h-xl { font-size: clamp(26px, 3.1vw, 42px); line-height: 1.24; }
-.h-lg { font-size: clamp(21px, 2.1vw, 29px); line-height: 1.3; }
-.h-md { font-size: clamp(18px, 1.6vw, 23px); line-height: 1.34; }
+.h-xl { font-size: clamp(31px, 3.5vw, 47px); line-height: 1.16; letter-spacing: 0; }
+.h-lg { font-size: clamp(25px, 2.5vw, 34px); line-height: 1.2; letter-spacing: 0; }
+.h-md { font-size: clamp(21px, 1.8vw, 26px); line-height: 1.26; }
 .h-sm { font-size: 19px; }
 
 .lede { font-size: 17px; line-height: 1.66; color: var(--ink-soft); }
@@ -177,7 +168,7 @@ h1, h2, h3, h4 {
   font-family: var(--font-sans);
   font-size: 9.5px; font-weight: 700;
   letter-spacing: .2em; text-transform: uppercase;
-  color: var(--accent-700);
+  color: var(--silver-700);
 }
 .eyebrow::before, .eyebrow::after {
   content: ""; height: 1px; background: currentColor; opacity: .55;
@@ -195,20 +186,20 @@ h1, h2, h3, h4 {
 /* A short double rule, the way a certificate divides its panels. */
 .rule-orn { display: block; margin: 26px 0 24px; width: 200px; }
 .rule-orn::before {
-  content: ""; display: block; height: 5px;
-  border-top: 2px solid var(--accent-500);
-  border-bottom: 1px solid var(--accent-600);
+  content: ""; display: block; height: 4px;
+  border-top: 1px solid var(--rule-strong);
+  border-bottom: 1px solid var(--rule-strong);
 }
 .rule-orn span { display: none; }
 .dark-panel .rule-orn::before, .hero .rule-orn::before {
-  border-top-color: var(--accent-500); border-bottom-color: var(--accent-700);
+  border-top-color: var(--rule-dark); border-bottom-color: var(--rule-dark);
 }
 
-.hero-rule { height: 2px; background: var(--accent-500); margin: 26px 0 24px; max-width: 200px; }
+.hero-rule { height: 1px; background: var(--rule-dark); margin: 26px 0 24px; max-width: 200px; }
 
 /* Certificate double border */
 .plate { border: 3px double var(--rule-strong); padding: clamp(26px, 4vw, 52px); background: var(--white); }
-.dark-panel .plate, .hero .plate { border-color: var(--accent-600); background: rgba(0, 26, 11, .46); }
+.dark-panel .plate, .hero .plate { border-color: var(--silver-700); background: rgba(0, 26, 11, .46); }
 
 /* ---------- Buttons ---------- */
 .btn {
@@ -246,7 +237,7 @@ h1, h2, h3, h4 {
 .link-arrow.on-dark:hover { border-bottom-color: var(--paper); }
 
 /* ---------- Ticker (first element on every page) ---------- */
-.ticker { background: var(--navy-950); border-bottom: 1px solid var(--accent-600); overflow: hidden; }
+.ticker { background: var(--navy-950); border-bottom: 1px solid var(--silver-700); overflow: hidden; }
 .ticker .lane { display: flex; align-items: center; height: 38px; }
 .ticker .label {
   flex: none; display: flex; align-items: center; gap: 9px;
@@ -310,8 +301,7 @@ h1, h2, h3, h4 {
 .nav-bar {
   position: sticky; top: 0; z-index: 60;
   background: var(--paper);
-  border-bottom: 1px solid var(--ink-900);
-  box-shadow: 0 3px 0 var(--accent-500), 0 4px 0 var(--ink-900);
+  border-bottom: 3px double var(--ink-900);
 }
 .masthead .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: 72px; }
 .nav-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
@@ -373,12 +363,12 @@ h1, h2, h3, h4 {
 .hero, .dark-panel {
   position: relative; overflow: hidden;
   background: var(--ink-900); color: var(--paper);
-  border-top: 3px double var(--accent-600);
-  border-bottom: 3px double var(--accent-600);
+  border-top: 3px double var(--silver-700);
+  border-bottom: 3px double var(--silver-700);
 }
 .hero::before, .dark-panel::before {
   content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 1;
-  background: linear-gradient(180deg, rgba(0,26,11,.46), rgba(0,26,11,.80));
+  background: linear-gradient(180deg, rgba(0,26,11,.52), rgba(0,26,11,.78));
 }
 /* .hero.tall is a flex container, so the wrap would otherwise shrink to fit
    its content and drift off the page's left margin. */
@@ -395,8 +385,8 @@ h1, h2, h3, h4 {
 .plate-img {
   position: absolute; inset: 0; z-index: 0;
   background-size: cover; background-position: center;
-  filter: grayscale(100%) contrast(118%) brightness(.72);
-  opacity: .58;
+  filter: grayscale(100%) contrast(104%) brightness(.5);
+  opacity: .34;
 }
 
 /* Home hero — symmetrical and centred */
@@ -449,8 +439,8 @@ h1, h2, h3, h4 {
 .hero-stats > div { padding: 24px 26px 26px 0; border-right: 1px solid var(--rule-dark-2); }
 .hero-stats > div:last-child { border-right: none; }
 .hero-stats .num {
-  font-family: var(--font-display); font-size: clamp(25px, 2.5vw, 35px);
-  line-height: 1; font-variant-numeric: tabular-nums lining-nums; color: var(--accent-300);
+  font-family: var(--font-display); font-size: clamp(23px, 2.2vw, 31px);
+  line-height: 1; font-variant-numeric: tabular-nums lining-nums; color: var(--paper);
 }
 .hero-stats .cap {
   margin-top: 12px; font-family: var(--font-sans); font-size: 9.5px; font-weight: 600;
@@ -484,17 +474,15 @@ h1, h2, h3, h4 {
 @media (max-width: 780px) { .section { padding: 64px 0; } .section.tight { padding: 44px 0; } }
 
 .section-head { max-width: 60ch; margin: 0 0 40px; }
-.section-head h2 { margin-top: 16px; padding-bottom: 16px; border-bottom: 2px solid var(--accent-500); }
-.dark-panel .section-head h2 { border-bottom-color: var(--accent-600); }
+.section-head h2 { margin-top: 16px; }
 .section-head .lede { margin-top: 16px; }
 
 .split-head {
   display: grid; grid-template-columns: minmax(0, 1fr) auto;
   gap: 44px; align-items: end; margin-bottom: 40px;
-  padding-bottom: 16px; border-bottom: 2px solid var(--accent-500);
+  padding-bottom: 20px; border-bottom: 1px solid var(--rule-strong);
 }
 .split-head h2 { margin-top: 14px; }
-.dark-panel .split-head { border-bottom-color: var(--accent-600); }
 @media (max-width: 900px) { .split-head { grid-template-columns: 1fr; gap: 22px; align-items: start; } }
 
 /* ---------- Cards ---------- */
@@ -526,11 +514,10 @@ a.card:hover .link-hint { border-bottom-color: currentColor; }
 .card h3 { font-size: 20px; margin-top: 11px; }
 .card .tag {
   font-family: var(--font-sans); font-size: 9.5px; font-weight: 700;
-  letter-spacing: .2em; text-transform: uppercase; color: var(--accent-700);
-  padding-bottom: 10px; border-bottom: 1px solid var(--accent-500);
+  letter-spacing: .24em; text-transform: uppercase; color: var(--silver-700);
+  padding-bottom: 12px; border-bottom: 1px solid var(--rule);
   display: block; width: fit-content;
 }
-.dark-panel .card .tag { color: var(--accent-300); border-bottom-color: var(--accent-600); }
 .card p.body { margin-top: 10px; font-size: 15.5px; line-height: 1.6; color: var(--ink-soft); max-width: 46ch; }
 .card ul.points {
   list-style: none; margin: 16px 0 0; padding: 13px 0 0;
@@ -550,7 +537,7 @@ a.card:hover .link-hint { border-bottom-color: currentColor; }
 .card .link-hint span { display: none; }
 .dark-panel .card .link-hint { color: var(--silver-200); }
 
-.dark-panel .card { border-top-color: var(--accent-600); border-right-color: var(--rule-dark-2); }
+.dark-panel .card { border-top-color: var(--silver-700); border-right-color: var(--rule-dark-2); }
 .dark-panel .card h3 { color: var(--parchment); }
 .dark-panel .card p.body { color: rgba(242,239,230,.74); }
 .dark-panel .card ul.points { border-top-color: var(--rule-dark-2); }
@@ -574,8 +561,8 @@ a.card:hover .link-hint { border-bottom-color: currentColor; }
 .stat-band > div { padding: 24px 24px 24px 0; border-right: 1px solid var(--rule); }
 .stat-band > div:last-child { border-right: none; }
 .stat-band .num {
-  font-family: var(--font-display); font-size: clamp(26px, 2.6vw, 36px);
-  line-height: 1; font-variant-numeric: tabular-nums lining-nums; color: var(--ink-800);
+  font-family: var(--font-display); font-size: clamp(25px, 2.4vw, 34px);
+  line-height: 1; font-variant-numeric: tabular-nums lining-nums; color: var(--ink-900);
 }
 .stat-band .cap {
   margin-top: 12px; font-family: var(--font-sans); font-size: 9.5px; font-weight: 600;
@@ -607,7 +594,7 @@ a.card:hover .link-hint { border-bottom-color: currentColor; }
 }
 .form-card .form-eyebrow {
   font-family: var(--font-sans); font-size: 9.5px; font-weight: 700;
-  letter-spacing: .2em; text-transform: uppercase; color: var(--accent-700);
+  letter-spacing: .2em; text-transform: uppercase; color: var(--silver-700);
   padding-bottom: 10px; border-bottom: 1px solid var(--rule); display: block;
 }
 .form-card h3 { font-size: 23px; margin-top: 14px; }
@@ -679,7 +666,7 @@ a.card:hover .link-hint { border-bottom-color: currentColor; }
 
 .form-card.on-dark {
   background: var(--navy-850); color: var(--parchment);
-  border-color: var(--accent-600); border-top-color: var(--accent-500);
+  border-color: var(--silver-700); border-top-color: var(--silver-300);
 }
 .form-card.on-dark .field > label { color: var(--gold-400); }
 .form-card.on-dark .field input, .form-card.on-dark .field select, .form-card.on-dark .field textarea {
@@ -695,6 +682,74 @@ a.card:hover .link-hint { border-bottom-color: currentColor; }
 
 .intake-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 500px); gap: 66px; align-items: start; text-align: left; }
 @media (max-width: 1000px) { .intake-grid { grid-template-columns: 1fr; gap: 44px; } }
+
+/* ---------- Name grid ----------
+   A plain roll of names read down the columns — no marker column, so it can
+   reflow to two columns and then one without the rows running together. */
+.name-grid {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 44px;
+  border-top: 1px solid var(--rule-strong);
+}
+.name-grid > li {
+  padding: 13px 0; border-bottom: 1px solid var(--rule);
+  font-size: 16px; color: var(--ink);
+}
+.dark-panel .name-grid { border-top-color: var(--rule-dark); }
+.dark-panel .name-grid > li { border-bottom-color: var(--rule-dark-2); color: rgba(242, 239, 230, .9); }
+@media (max-width: 820px) { .name-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 28px; } }
+@media (max-width: 520px) { .name-grid { grid-template-columns: 1fr; } }
+
+/* ---------- Rate card ----------
+   A comparison table: a stub column of guidelines against one column per tier.
+   Figures are lining and tabular so the columns rule up against each other. */
+.rate-scroll {
+  overflow-x: auto; -webkit-overflow-scrolling: touch;
+  margin-inline: calc(var(--gutter) * -1); padding-inline: var(--gutter);
+}
+.rate-table {
+  width: 100%; min-width: 720px; border-collapse: collapse;
+  border-top: 3px double var(--rule-strong);
+  border-bottom: 1px solid var(--rule-strong);
+}
+.rate-table th, .rate-table td {
+  text-align: left; vertical-align: top;
+  padding: 13px 20px 13px 0; border-bottom: 1px solid var(--rule);
+}
+.rate-table thead th {
+  font-family: var(--font-sans); font-size: 10px; font-weight: 700;
+  letter-spacing: .16em; text-transform: uppercase; color: var(--ink);
+  border-bottom: 1px solid var(--rule-strong); padding-bottom: 11px;
+}
+/* The tier's role, set under its name rather than beside it. */
+.rate-table thead th i {
+  display: block; margin-top: 5px; font-style: normal; font-weight: 400;
+  font-size: 9px; letter-spacing: .14em; color: var(--ink-mute);
+}
+.rate-table tbody th {
+  font-family: var(--font-sans); font-size: 11.5px; font-weight: 700;
+  letter-spacing: .06em; color: var(--ink-soft); width: 30%;
+}
+.rate-table tbody th i {
+  display: block; margin-top: 4px; font-style: normal; font-weight: 400;
+  font-size: 10.5px; letter-spacing: 0; color: var(--ink-mute);
+}
+.rate-table td {
+  font-size: 15.5px; color: var(--ink);
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.rate-table tbody tr:nth-child(even) { background: rgba(22, 24, 15, .022); }
+.rate-table tbody tr:last-child th, .rate-table tbody tr:last-child td { border-bottom: none; }
+@media (max-width: 780px) {
+  .rate-table th, .rate-table td { padding: 11px 16px 11px 0; }
+  .rate-table td { font-size: 15px; }
+}
+
+/* Visually hidden, still read aloud. */
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
 
 /* ---------- Ruled schedule ---------- */
 .spec-table {
@@ -801,12 +856,9 @@ a.card:hover .link-hint { border-bottom-color: currentColor; }
   padding: 48px 48px; display: grid; grid-template-columns: 1fr auto;
   gap: 40px; align-items: center;
 }
-.banner-cta.dark { background: var(--ink-900); color: var(--paper); border: 3px double var(--accent-600); }
+.banner-cta.dark { background: var(--ink-900); color: var(--paper); border: 3px double var(--silver-700); }
 .banner-cta > * { position: relative; z-index: 1; }
-.banner-cta h2 {
-  font-size: clamp(20px, 1.9vw, 26px); max-width: 24ch;
-  text-transform: uppercase; letter-spacing: .055em;
-}
+.banner-cta h2 { font-size: clamp(23px, 2.1vw, 30px); max-width: 22ch; }
 .banner-cta p { margin-top: 12px; color: rgba(242,239,230,.74); font-size: 15.5px; max-width: 58ch; }
 .banner-cta .actions { display: flex; gap: 14px; flex-wrap: wrap; }
 @media (max-width: 900px) { .banner-cta { grid-template-columns: 1fr; padding: 44px 30px; gap: 30px; } }
@@ -825,7 +877,7 @@ a.card:hover .link-hint { border-bottom-color: currentColor; }
 footer.site {
   background: var(--navy-950); color: rgba(242,239,230,.66);
   padding: 56px 0 26px; font-size: 13.5px;
-  border-top: 3px double var(--accent-600);
+  border-top: 3px double var(--silver-700);
 }
 .foot-grid {
   display: grid; grid-template-columns: minmax(0, 4fr) repeat(2, minmax(0, 2fr)) minmax(0, 2fr);
@@ -843,7 +895,7 @@ footer.site {
 .foot-contact a:hover { border-color: var(--gold); }
 footer.site .col-title {
   font-family: var(--font-sans); font-size: 9.5px; font-weight: 700;
-  letter-spacing: .2em; text-transform: uppercase; color: var(--accent-300); margin-bottom: 14px;
+  letter-spacing: .2em; text-transform: uppercase; color: var(--silver-300); margin-bottom: 14px;
 }
 footer.site ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 9px; }
 footer.site ul a { text-decoration: none; color: rgba(242,239,230,.66); font-size: 14px; }
@@ -889,7 +941,7 @@ footer.site ul a:hover { color: var(--parchment); }
    wherever it sits on navy. */
 .foot-logo {
   display: inline-block; background: var(--paper);
-  padding: 10px 14px; border: 1px solid var(--accent-600);
+  padding: 10px 14px; border: 1px solid var(--silver-700);
 }
 
 /* Centre the eyebrow inside the home hero, matching the sub-page heroes. */
