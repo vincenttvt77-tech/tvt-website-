@@ -397,41 +397,6 @@ h1, h2, h3, h4 {
 .hero-inner .lede { max-width: 62ch; }
 .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 32px; }
 
-/* The opening page carries the firm's parameters beside its statement, the way
-   a lender's letter sets out what it writes before it says anything else. */
-.hero-cols {
-  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 344px);
-  gap: 60px; align-items: start;
-}
-@media (max-width: 1000px) { .hero-cols { grid-template-columns: 1fr; gap: 40px; } }
-
-.schedule-panel {
-  border: 1px solid var(--rule-dark); background: rgba(0, 26, 11, .40);
-  padding: 20px 22px 18px; margin-top: 6px;
-}
-.schedule-panel .sp-head {
-  font-family: var(--font-sans); font-size: 9px; font-weight: 700;
-  letter-spacing: .2em; text-transform: uppercase; color: var(--silver-300);
-  padding-bottom: 11px; border-bottom: 3px double var(--rule-dark);
-}
-.schedule-panel dl { margin: 0; }
-.schedule-panel .sp-row {
-  display: flex; align-items: baseline; justify-content: space-between; gap: 16px;
-  padding: 9px 0; border-bottom: 1px solid var(--rule-dark-2);
-}
-.schedule-panel .sp-row:last-child { border-bottom: none; }
-.schedule-panel dt { font-size: 15px; color: rgba(242, 239, 230, .92); }
-.schedule-panel dd {
-  margin: 0; font-family: var(--font-sans); font-size: 11.5px;
-  font-variant-numeric: tabular-nums lining-nums;
-  color: rgba(242, 239, 230, .72); white-space: nowrap;
-}
-.schedule-panel .sp-foot {
-  margin-top: 13px; padding-top: 11px; border-top: 1px solid var(--rule-dark-2);
-  font-family: var(--font-sans); font-size: 10px; line-height: 1.62;
-  color: rgba(242, 239, 230, .58);
-}
-
 .hero-stats {
   display: grid; grid-template-columns: repeat(4, 1fr);
   margin-top: 44px; border-top: 1px solid var(--rule-dark);
