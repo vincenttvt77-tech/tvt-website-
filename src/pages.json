@@ -1,8 +1,8 @@
 {
   "index": {
-    "title": "TVT Capital | Direct Lender — Bridge Loans, Growth & Working Capital $50K–$25M Nationwide",
-    "description": "TVT Capital is a direct lender to U.S. businesses with deep middle market expertise. Bridge loans, growth capital, working capital, and second-lien facilities from $50K to $25M. Indicative term sheets typically inside 24 hours. All 50 states.",
-    "head_extra": "  <script type=\"application/ld+json\">\n  {\n    \"@context\": \"https://schema.org\",\n    \"@graph\": [\n      { \"@type\": \"Organization\", \"@id\": \"https://tvtcapital.com/#org\", \"name\": \"TVT Capital\", \"url\": \"https://tvtcapital.com/\", \"logo\": \"https://tvtcapital.com/assets/tvt-wordmark.svg\", \"telephone\": \"+1-555-555-5555\", \"email\": \"info@tvtcapital.com\", \"areaServed\": { \"@type\": \"Country\", \"name\": \"United States\" } },\n      { \"@type\": \"FinancialService\", \"@id\": \"https://tvtcapital.com/#service\", \"name\": \"TVT Capital \\u2014 Direct Lender\", \"url\": \"https://tvtcapital.com/\", \"parentOrganization\": { \"@id\": \"https://tvtcapital.com/#org\" }, \"areaServed\": { \"@type\": \"Country\", \"name\": \"United States\" }, \"serviceType\": [\"Bridge Loan\", \"Growth Capital\", \"Working Capital\", \"Second-Lien Facility\", \"Acquisition Financing\", \"Recapitalization\"], \"currenciesAccepted\": \"USD\", \"feesAndCommissionsSpecification\": \"No upfront fees on application or indication. Pricing tailored to deal structure.\", \"description\": \"Direct lender providing $50K to $25M in bridge financing, growth capital, working capital, and second-lien facilities. Deep middle market expertise. Indicative term sheets typically inside 24 hours. Nationwide coverage in all 50 states.\" },\n      { \"@type\": \"WebSite\", \"@id\": \"https://tvtcapital.com/#site\", \"url\": \"https://tvtcapital.com/\", \"name\": \"TVT Capital\", \"publisher\": { \"@id\": \"https://tvtcapital.com/#org\" } }\n    ]\n  }\n  </script>\n  <script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"What is TVT Capital?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"TVT Capital is a direct lender to U.S. businesses, providing bridge loans, growth capital, working capital, and second-lien facilities from $50K to $25M. With deep middle market expertise, TVT lends nationwide in all 50 states.\"}}, {\"@type\": \"Question\", \"name\": \"What size loans does TVT Capital provide?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"TVT Capital provides financing from $50,000 to $25,000,000, structured around the transaction.\"}}, {\"@type\": \"Question\", \"name\": \"How fast can a business get funded?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Indicative term sheets are typically issued within 24 hours. Closing timelines follow underwriting, diligence, and standard conditions to close, and depend on the specific transaction.\"}}, {\"@type\": \"Question\", \"name\": \"Does TVT Capital lend nationwide?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Yes. TVT Capital lends to qualified businesses in all 50 U.S. states.\"}}, {\"@type\": \"Question\", \"name\": \"Does TVT Capital require a personal guarantee?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"It depends on deal structure. Sponsor-backed and asset-secured transactions are frequently completed without a full personal guarantee.\"}}]}</script>\n"
+    "title": "TVT Capital | Direct Lender — $50K to $25M, All 50 States",
+    "description": "TVT Capital is a direct lender providing $50K to $25M in working capital, growth capital, bridge financing and acquisition financing. All 50 states. Most applicants get a first answer the same business day.",
+    "head_extra": "  <script type=\"application/ld+json\">\n  {\n    \"@context\": \"https://schema.org\",\n    \"@graph\": [\n      { \"@type\": \"Organization\", \"@id\": \"https://tvtcapital.com/#org\", \"name\": \"TVT Capital\", \"url\": \"https://tvtcapital.com/\", \"logo\": \"https://tvtcapital.com/assets/tvt-wordmark.svg\", \"telephone\": \"+1-212-229-4888\", \"address\": { \"@type\": \"PostalAddress\", \"streetAddress\": \"500 7th Avenue, 8th Floor\", \"addressLocality\": \"New York\", \"addressRegion\": \"NY\", \"postalCode\": \"10018\", \"addressCountry\": \"US\" }, \"email\": \"info@tvtcapital.com\", \"areaServed\": { \"@type\": \"Country\", \"name\": \"United States\" } },\n      { \"@type\": \"FinancialService\", \"@id\": \"https://tvtcapital.com/#service\", \"name\": \"TVT Capital \\u2014 Direct Lender\", \"url\": \"https://tvtcapital.com/\", \"parentOrganization\": { \"@id\": \"https://tvtcapital.com/#org\" }, \"areaServed\": { \"@type\": \"Country\", \"name\": \"United States\" }, \"serviceType\": [\"Bridge Loan\", \"Growth Capital\", \"Working Capital\", \"Second-Lien Facility\", \"Acquisition Financing\", \"Recapitalization\"], \"currenciesAccepted\": \"USD\", \"feesAndCommissionsSpecification\": \"No upfront fees on application or indication. Pricing tailored to deal structure.\", \"description\": \"A direct lender providing $50K to $25M in working capital, growth capital, bridge financing and acquisition financing to businesses in all 50 states. Most applicants get a first answer the same business day.\" },\n      { \"@type\": \"WebSite\", \"@id\": \"https://tvtcapital.com/#site\", \"url\": \"https://tvtcapital.com/\", \"name\": \"TVT Capital\", \"publisher\": { \"@id\": \"https://tvtcapital.com/#org\" } }\n    ]\n  }\n  </script>\n  <script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"What is TVT Capital?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"TVT Capital is a direct lender. We provide $50K to $25M in working capital, growth capital, bridge financing and acquisition financing to businesses in all 50 states.\"}}, {\"@type\": \"Question\", \"name\": \"What size loans does TVT Capital provide?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"TVT Capital provides financing from $50,000 to $25,000,000, structured around the transaction.\"}}, {\"@type\": \"Question\", \"name\": \"How fast can a business get funded?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Most applicants get a first answer the same business day, and often a term sheet within 24 hours. Closing depends on the deal and on standard conditions being met.\"}}, {\"@type\": \"Question\", \"name\": \"Does TVT Capital lend nationwide?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Yes. TVT Capital lends to qualified businesses in all 50 U.S. states.\"}}, {\"@type\": \"Question\", \"name\": \"Does TVT Capital require a personal guarantee?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"It depends on deal structure. Sponsor-backed and asset-secured transactions are frequently completed without a full personal guarantee.\"}}]}</script>\n"
   },
   "solutions": {
     "nav": "solutions",
@@ -11,7 +11,7 @@
   },
   "process": {
     "nav": "process",
-    "title": "The TVT Process | From Intake to Wire, Typically Inside Ten Days",
+    "title": "How It Works | TVT Capital",
     "description": "The TVT Capital underwriting process — two-minute intake, indication typically same day, and indicative term sheets typically within 24 hours."
   },
   "industries": {
@@ -21,12 +21,12 @@
   },
   "coverage": {
     "nav": "coverage",
-    "title": "Nationwide Coverage | TVT Capital Lends in All 50 States",
+    "title": "Where We Lend | TVT Capital Funds Businesses in All 50 States",
     "description": "TVT Capital lends to operating businesses in all 50 U.S. states."
   },
   "track-record": {
     "nav": "track-record",
-    "title": "Track Record | TVT Capital — $4B+ Deployed Across 6,000+ Deals",
+    "title": "Our Track Record | TVT Capital — $4B+ Deployed, 6,000+ Deals Funded",
     "description": "$4B+ deployed across 6,000+ deals. TVT Capital representative transactions across industrial, healthcare, and distribution."
   },
   "partners": {
@@ -53,8 +53,8 @@
   },
   "contact": {
     "cta": false,
-    "title": "Contact TVT Capital | (555) 555-5555",
-    "description": "Contact TVT Capital. Direct line (555) 555-5555 · info@tvtcapital.com. Borrowers, partners, and operators welcome."
+    "title": "Contact TVT Capital | (212) 229-4888",
+    "description": "Talk to TVT Capital. Call (212) 229-4888 or email info@tvtcapital.com. Business owners, brokers and partners welcome."
   },
   "faq": {
     "title": "FAQ | TVT Capital — Frequently Asked Questions",
