@@ -73,15 +73,23 @@ def build_page(slug, meta, partials):
     head = head.replace("{{ROBOTS}}", meta.get("robots", "index, follow"))
     head = head.replace("{{CANONICAL}}", "" if slug == "index" else "{}.html".format(slug))
     head = head.replace("{{HEAD_EXTRA}}", meta.get("head_extra", ""))
+    head = head.replace("<body>", '<body data-page="{}">'.format(slug))
 
+    if slug != "index":
+        label = meta["title"].split("|")[0].strip().split(" — ")[0]
+        import html
+        crumb = '<div class="breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span>{}</span></div>'.format(html.escape(label))
+        body = body.replace('<div class="wrap page-hero">', '<div class="wrap page-hero">' + crumb, 1)
     chrome = partials["chrome"].replace("{{TICKER_ITEMS}}", partials["ticker"])
     active = meta.get("nav")
+    if slug == "about":
+        chrome = chrome.replace('href="about.html"', 'href="about.html" class="active" aria-current="page"', 1)
     for key, token in NAV_KEYS.items():
-        chrome = chrome.replace("{{%s}}" % token, ' class="active"' if key == active else "")
+        chrome = chrome.replace("{{%s}}" % token, ' class="active" aria-current="page"' if key == active else "")
 
     tail = (partials["cta"] if meta.get("cta", True) else "") + partials["footer"]
 
-    return head + chrome + "\n" + body.rstrip("\n") + "\n\n" + tail
+    return head + chrome + '\n<main id="main-content" tabindex="-1">\n' + body.rstrip("\n") + "\n</main>\n\n" + tail
 
 
 def main():

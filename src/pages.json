@@ -1,8 +1,8 @@
 {
   "index": {
     "title": "TVT Capital | Direct Lender — $50K to $25M, All 50 States",
-    "description": "TVT Capital is a direct lender providing $50K to $25M in working capital, growth capital, bridge financing and acquisition financing. All 50 states. Most applicants get a first answer the same business day.",
-    "head_extra": "  <script type=\"application/ld+json\">\n  {\n    \"@context\": \"https://schema.org\",\n    \"@graph\": [\n      { \"@type\": \"Organization\", \"@id\": \"https://tvtcapital.com/#org\", \"name\": \"TVT Capital\", \"url\": \"https://tvtcapital.com/\", \"logo\": \"https://tvtcapital.com/assets/tvt-wordmark.svg\", \"telephone\": \"+1-212-229-4888\", \"address\": { \"@type\": \"PostalAddress\", \"streetAddress\": \"500 7th Avenue, 8th Floor\", \"addressLocality\": \"New York\", \"addressRegion\": \"NY\", \"postalCode\": \"10018\", \"addressCountry\": \"US\" }, \"email\": \"info@tvtcapital.com\", \"areaServed\": { \"@type\": \"Country\", \"name\": \"United States\" } },\n      { \"@type\": \"FinancialService\", \"@id\": \"https://tvtcapital.com/#service\", \"name\": \"TVT Capital \\u2014 Direct Lender\", \"url\": \"https://tvtcapital.com/\", \"parentOrganization\": { \"@id\": \"https://tvtcapital.com/#org\" }, \"areaServed\": { \"@type\": \"Country\", \"name\": \"United States\" }, \"serviceType\": [\"Bridge Loan\", \"Growth Capital\", \"Working Capital\", \"Second-Lien Facility\", \"Acquisition Financing\", \"Recapitalization\"], \"currenciesAccepted\": \"USD\", \"feesAndCommissionsSpecification\": \"No upfront fees on application or indication. Pricing tailored to deal structure.\", \"description\": \"A direct lender providing $50K to $25M in working capital, growth capital, bridge financing and acquisition financing to businesses in all 50 states. Most applicants get a first answer the same business day.\" },\n      { \"@type\": \"WebSite\", \"@id\": \"https://tvtcapital.com/#site\", \"url\": \"https://tvtcapital.com/\", \"name\": \"TVT Capital\", \"publisher\": { \"@id\": \"https://tvtcapital.com/#org\" } }\n    ]\n  }\n  </script>\n  <script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"What is TVT Capital?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"TVT Capital is a direct lender. We provide $50K to $25M in working capital, growth capital, bridge financing and acquisition financing to businesses in all 50 states.\"}}, {\"@type\": \"Question\", \"name\": \"What size loans does TVT Capital provide?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"TVT Capital provides financing from $50,000 to $25,000,000, structured around the transaction.\"}}, {\"@type\": \"Question\", \"name\": \"How fast can a business get funded?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Most applicants get a first answer the same business day, and often a term sheet within 24 hours. Closing depends on the deal and on standard conditions being met.\"}}, {\"@type\": \"Question\", \"name\": \"Does TVT Capital lend nationwide?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Yes. TVT Capital lends to qualified businesses in all 50 U.S. states.\"}}, {\"@type\": \"Question\", \"name\": \"Does TVT Capital require a personal guarantee?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"It depends on deal structure. Sponsor-backed and asset-secured transactions are frequently completed without a full personal guarantee.\"}}]}</script>\n"
+    "description": "TVT Capital is a Utah-based direct lender with offices across the United States, including Manhattan. Financing from $50K to $25M across all 50 states.",
+    "head_extra": "  <script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@graph\": [{\"@type\": \"Organization\", \"@id\": \"https://tvtcapital.com/#org\", \"name\": \"TVT Capital\", \"url\": \"https://tvtcapital.com/\", \"logo\": \"https://tvtcapital.com/assets/tvt-logo.png\", \"telephone\": \"+1-212-229-4888\", \"address\": {\"@type\": \"PostalAddress\", \"addressRegion\": \"UT\", \"addressCountry\": \"US\"}, \"email\": \"info@tvtcapital.com\", \"areaServed\": {\"@type\": \"Country\", \"name\": \"United States\"}, \"location\": {\"@type\": \"Place\", \"name\": \"TVT Capital Manhattan office\", \"address\": {\"@type\": \"PostalAddress\", \"streetAddress\": \"500 7th Avenue, 8th Floor\", \"addressLocality\": \"New York\", \"addressRegion\": \"NY\", \"postalCode\": \"10018\", \"addressCountry\": \"US\"}}, \"description\": \"Utah-based direct lender with offices across the United States, including Manhattan.\"}, {\"@type\": \"FinancialService\", \"@id\": \"https://tvtcapital.com/#service\", \"name\": \"TVT Capital — Direct Lender\", \"url\": \"https://tvtcapital.com/\", \"parentOrganization\": {\"@id\": \"https://tvtcapital.com/#org\"}, \"areaServed\": {\"@type\": \"Country\", \"name\": \"United States\"}, \"serviceType\": [\"Bridge Loan\", \"Growth Capital\", \"Working Capital\", \"Second-Lien Facility\", \"Acquisition Financing\", \"Recapitalization\"], \"currenciesAccepted\": \"USD\", \"feesAndCommissionsSpecification\": \"No upfront fees on application or indication. Pricing tailored to deal structure.\", \"description\": \"Utah-based TVT Capital has offices across the United States, including Manhattan, and provides $50K to $25M in financing across all 50 states.\"}, {\"@type\": \"WebSite\", \"@id\": \"https://tvtcapital.com/#site\", \"url\": \"https://tvtcapital.com/\", \"name\": \"TVT Capital\", \"publisher\": {\"@id\": \"https://tvtcapital.com/#org\"}}]}</script>\n  <script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"FAQPage\", \"mainEntity\": [{\"@type\": \"Question\", \"name\": \"What is TVT Capital?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"TVT Capital is a direct lender. We provide $50K to $25M in working capital, growth capital, bridge financing and acquisition financing to businesses in all 50 states.\"}}, {\"@type\": \"Question\", \"name\": \"What size loans does TVT Capital provide?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"TVT Capital provides financing from $50,000 to $25,000,000, structured around the transaction.\"}}, {\"@type\": \"Question\", \"name\": \"How fast can a business get funded?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Most applicants get a first answer the same business day, and often a term sheet within 24 hours. Closing depends on the deal and on standard conditions being met.\"}}, {\"@type\": \"Question\", \"name\": \"Does TVT Capital lend nationwide?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"Yes. TVT Capital lends to qualified businesses in all 50 U.S. states.\"}}, {\"@type\": \"Question\", \"name\": \"Does TVT Capital require a personal guarantee?\", \"acceptedAnswer\": {\"@type\": \"Answer\", \"text\": \"It depends on deal structure. Sponsor-backed and asset-secured transactions are frequently completed without a full personal guarantee.\"}}]}</script>\n"
   },
   "solutions": {
     "nav": "solutions",
@@ -22,7 +22,7 @@
   "coverage": {
     "nav": "coverage",
     "title": "Where We Lend | TVT Capital Funds Businesses in All 50 States",
-    "description": "TVT Capital lends to operating businesses in all 50 U.S. states."
+    "description": "TVT Capital is a Utah-based direct lender with offices across the United States, including Manhattan. Financing from $50K to $25M across all 50 states."
   },
   "track-record": {
     "nav": "track-record",
@@ -44,7 +44,7 @@
   },
   "about": {
     "title": "About TVT Capital | Direct Lender to U.S. Businesses",
-    "description": "TVT Capital is a direct lender to U.S. businesses. We deploy bridge loans, growth capital, working capital, and second-lien facilities from $50K to $25M — nationwide."
+    "description": "TVT Capital is a Utah-based direct lender with offices across the United States, including Manhattan. Financing from $50K to $25M across all 50 states."
   },
   "apply": {
     "cta": false,
@@ -54,7 +54,7 @@
   "contact": {
     "cta": false,
     "title": "Contact TVT Capital | (212) 229-4888",
-    "description": "Talk to TVT Capital. Call (212) 229-4888 or email info@tvtcapital.com. Business owners, brokers and partners welcome."
+    "description": "TVT Capital is a Utah-based direct lender with offices across the United States, including Manhattan. Financing from $50K to $25M across all 50 states."
   },
   "faq": {
     "title": "FAQ | TVT Capital — Frequently Asked Questions",
@@ -120,5 +120,25 @@
     "robots": "noindex, follow",
     "title": "Licensing | TVT Capital",
     "description": "TVT Capital Licensing."
+  },
+  "term-loans": {
+    "title": "Term loans | TVT Capital",
+    "description": "Straightforward financing with a defined repayment schedule and terms built around the deal.",
+    "nav": "solutions"
+  },
+  "equipment-financing": {
+    "title": "Equipment financing | TVT Capital",
+    "description": "Finance the equipment your business needs without tying up all of your available cash.",
+    "nav": "solutions"
+  },
+  "real-estate-financing": {
+    "title": "Real estate financing | TVT Capital",
+    "description": "Financing solutions for commercial real estate purchases, refinancing, and other property-related opportunities.",
+    "nav": "solutions"
+  },
+  "debt-consolidation": {
+    "title": "Debt consolidation | TVT Capital",
+    "description": "Combine existing business obligations into one financing structure that may make managing your payments easier.",
+    "nav": "solutions"
   }
 }

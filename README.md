@@ -10,6 +10,8 @@ index.html, solutions.html, …   generated pages — commit these, don't hand-e
 creditmatch.html                self-contained app, see "CreditMatch" below
 tvt.css                         design system
 tvt.js                          nav, scroll reveal, form wizard, phone masking
+refinements.css                 distinct main-page layouts, ticker, location styling
+refinements.js                  financing filters, process explorer, ticker motion
 assets/                         SVG wordmarks + favicon
 build.py                        assembles pages from src/
 src/partials/                   shared shell: head, ticker + nav, closing CTA, footer
@@ -30,39 +32,32 @@ the source — the site is served straight from the repo, so stale output ships.
 
 `build.py` fails loudly if a `{{PLACEHOLDER}}` survives assembly.
 
-## House style
+## Visual design
 
-The site is set like a lender's printed material rather than a product landing
-page. Four rules carry most of it — breaking them is what makes the pages read
-as generic:
+The September 2026 redesign keeps the original TVT logo byte-for-byte. It uses
+Helvetica Neue with system sans-serif fallbacks for headings and body copy,
+the logo’s forest greens, white, and restrained silver accents. The homepage pairs a
+large typographic introduction with a licensed Utah skyline photograph. TVT is
+Utah-based with offices across the United States, including Manhattan; the
+supplied NYC address is labeled as the Manhattan office. The main pages use
+shorter copy, open layouts, lightly shaded surfaces, and restrained green accents.
+Photo attribution and location details are in `docs/utah-location-update.md`.
 
-- **Headings are titles, not slogans.** `Bridge Loans`, `Terms and Structure`,
-  `How a Facility Is Underwritten` — Title Case noun phrases naming what the
-  section is. No `Short phrase. Italic fragment.` constructions, no second
-  person (`You've capped out on senior`), no wordplay in a heading.
-- **Type is sized off a page.** `.h-xl` tops out at 47px, body is 16px. Nothing
-  is set at billboard scale; density does the work instead of size.
-- **The page arrives set.** `.reveal` is inert, hover states are colour and
-  rule changes only, and the deal ticker is the one thing that moves.
-- **Sections are divided, not spaced.** Hairlines, double rules on panel edges,
-  and ruled tables (`.spec-table`, `.stat-band`, `.timeline`, `.schedule-panel`)
-  in place of cards with shadows.
-- **Everything is set in the serif.** `--font-sans` is an alias onto the Caslon
-  text face, so eyebrows, buttons, nav, and figure captions are letterspaced
-  serif caps rather than a grotesque. That single substitution does more to date
-  the page than any amount of ornament.
-- **Running text is justified** (`.prose`), with hyphenation, unjustified below
-  560px where the measure is too short to space evenly.
+Solutions, Process, About, and Partners have distinct compositions. Financing
+filters and a four-stage process explorer progressively enhance the static
+content. All options and steps remain readable without JavaScript. The restored
+top conveyor pauses on hover or keyboard focus and uses the original representative structures and “What we fund”
+label; it is not a live feed of verified funded deals.
 
-The masthead is two ruled rows — the house, its business and its telephone
-above; the navigation ruled off beneath and set across the full measure. It is
-not only a period arrangement: the lockup and seven nav items cannot fit one
-1100px row without colliding, so a single row was structurally wrong.
+All 27 marketing pages share the navigation, page shell, forms, and design
+system. The company-provided brief is retained in `docs/company-brief.txt`.
+The financing range, track-record figures, address, and contact details come
+from the supplied company material. Existing specialized financing pages and
+legal disclosures remain available.
 
-The palette is sampled from the logo — deep green through emerald, with the
-globe's silver as the secondary. Older token names (`--navy-900`, `--gold`,
-`--forest-700`, …) are kept as aliases in `:root` because inline styles through
-the page bodies still reference them; they all resolve onto the current palette.
+`creditmatch.html` is an existing compiled tax-credit application. Its JavaScript
+is preserved; `creditmatch-theme.css` provides the visual refresh. Describe it
+as tax-credit exploration, not as a general financing-matching tool.
 
 ## Adding a page
 
@@ -72,42 +67,21 @@ the page bodies still reference them; they all resolve onto the current palette.
    `head_extra` (e.g. JSON-LD), `cta: false` to drop the shared closing CTA.
 3. Run `python3 build.py`.
 
-## The deal ticker
+## Navigation and forms
 
-The ticker is deliberately the **first element on every page**, above the
-announcement bar and nav. Its contents live in one place — the `TICKER` list in
-`build.py` — and are emitted twice so the marquee loops seamlessly.
+The top navigation prioritizes financing, approach, company, and partners.
+The footer and mobile menu expose the full destination set. Forms preserve the
+existing Web3Forms destination and consent text. The borrower form now uses
+explicit Continue buttons and validates each step. A same-origin confirmation
+redirect follows a successful provider submission. No test lead is sent.
 
-Entries describe *representative structures* (state, sector, structure). They
-carry no dates, amounts, or borrower names, and the Disclosures page states that
-they are not a list of specific closed transactions. Keep it that way: adding
-recency or amount claims would turn it into a performance representation.
+## Assets and publishing
 
-## CreditMatch
-
-`creditmatch.html` is a pre-compiled React/Tailwind single-page app whose source
-lives outside this repo. It is self-contained and is **not** generated by
-`build.py`, so it keeps its own look rather than the site design system. The only
-local edits are its favicon and logo, repointed at `assets/`. To restyle it,
-change and rebuild the upstream app, then drop the new bundle in here.
-
-## Binary assets
-
-The brand marks and the photography are **not committed** — this repository was
-rebuilt in an environment that could reach neither the existing deployment nor
-the image CDN. Fetch them once, then commit the results:
-
-```
-sh scripts/prepare-assets.sh
-```
-
-That pulls `assets/tvt-logo.png` and the favicons from the live deployment,
-pulls the four photographic plates from the CDN they were generated to, and
-downscales the plates from 5-10 MB PNGs to progressive JPEGs (`node` plus
-`sharp` required for that last step; the fetch works without it).
-
-Until the files are committed, `assets/*.png` and `assets/img/` stay gitignored
-and the deploy build runs the same script.
+The original brand PNGs and optimized JPEG photographs are included in Git.
+The logo is unmodified. The large source photograph PNGs are omitted from the
+public output. `python3 scripts/build-static.py` runs the normal page generator
+and packages only public HTML, CSS, JavaScript, and assets into `dist/`.
+`python3 scripts/check-site.py` checks local links, assets, and required pages.
 
 ## Single-file preview
 
@@ -136,3 +110,5 @@ Then open http://127.0.0.1:8000/.
 All three forms (borrower intake, partner application, contact) post to
 Web3Forms with the shared `access_key`, and redirect to `thanks.html`.
 Submit-time subject lines and the phone-number mask are handled in `tvt.js`.
+
+Original site: https://tvt-capital.vercel.app/ (preserved separately). Redesign review: https://tvt-capital-redesign.vincenttvt77.chatgpt.site/ . The redesign remains on its own draft PR; the original branch is not merged or replaced.

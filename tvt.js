@@ -9,8 +9,32 @@
     toggle.addEventListener("click", function () {
       var open = bar.classList.toggle("open");
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
     });
   }
+
+  if (toggle) {
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && bar.classList.contains("open")) {
+        bar.classList.remove("open");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Open menu");
+        toggle.focus();
+      }
+    });
+    document.addEventListener("click", function (e) {
+      if (!bar.contains(e.target)) {
+        bar.classList.remove("open");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Open menu");
+      }
+    });
+  }
+
+  /* Keep the confirmation page on the same site as the submitted form. */
+  document.querySelectorAll('form input[name="redirect"]').forEach(function (input) {
+    input.value = new URL("thanks.html", window.location.href).href;
+  });
 
   /* ---- Scroll reveal ---- */
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -48,8 +72,23 @@
     var counter = form.querySelector("[data-wizard-now]");
     var barFill = form.querySelector("[data-wizard-bar]");
     var now = 1;
+    form.noValidate = true;
+    if (counter) counter.parentElement.setAttribute("aria-live", "polite");
+    steps.forEach(function (step, index) {
+      if (index === steps.length - 1) return;
+      var next = document.createElement("button");
+      next.type = "button";
+      next.className = "btn btn-primary wizard-next";
+      next.textContent = "Continue →";
+      next.addEventListener("click", function () {
+        var invalid = step.querySelector("input:invalid, select:invalid, textarea:invalid");
+        if (invalid) { invalid.focus(); invalid.reportValidity(); return; }
+        go(now + 1, true);
+      });
+      step.appendChild(next);
+    });
 
-    function go(n) {
+    function go(n, focus) {
       now = Math.max(1, Math.min(total, n));
       Array.prototype.forEach.call(steps, function (s) {
         s.classList.toggle("on", parseInt(s.dataset.step, 10) === now);
@@ -57,18 +96,23 @@
       if (counter) counter.textContent = now;
       if (barFill) barFill.style.width = (now / total * 100) + "%";
       var focusable = form.querySelector(".fstep.on input, .fstep.on select");
-      if (focusable && now > 1 && focusable.type === "text") focusable.focus({ preventScroll: true });
+      if (focusable && focus) focusable.focus({ preventScroll: true });
     }
 
-    form.addEventListener("change", function (e) {
-      if (e.target.name === "Capital Needed" && now === 1) setTimeout(function () { go(2); }, 220);
-      else if (e.target.name === "Use of Proceeds" && now === 2) setTimeout(function () { go(3); }, 220);
-    });
     Array.prototype.forEach.call(form.querySelectorAll("[data-back]"), function (b) {
-      b.addEventListener("click", function () { go(now - 1); });
+      b.addEventListener("click", function () { go(now - 1, true); });
     });
 
-    form.addEventListener("submit", function () {
+    form.addEventListener("submit", function (event) {
+      var invalid = form.querySelector("input:invalid, select:invalid, textarea:invalid");
+      if (invalid) {
+        event.preventDefault();
+        var step = invalid.closest(".fstep");
+        if (step) go(Number(step.dataset.step));
+        invalid.focus();
+        invalid.reportValidity();
+        return;
+      }
       var subj = form.querySelector('input[name="subject"]');
       if (!subj) return;
       var amt = form.querySelector('input[name="Capital Needed"]:checked');

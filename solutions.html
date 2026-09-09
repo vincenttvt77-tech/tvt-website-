@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#0b1626" />
+  <meta name="theme-color" content="#003010" />
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-64.png" />
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
@@ -21,20 +21,14 @@
   <meta property="og:image" content="https://tvtcapital.com/assets/tvt-logo.png" />
   <meta name="twitter:card" content="summary" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
   <link rel="stylesheet" href="tvt.css" />
+  <link rel="stylesheet" href="refinements.css" />
 </head>
-<body>
-<!-- ===== Deal ticker — pinned to the top of every page.
-     Representative structures across the platform; no live or recency claims. ===== -->
-<div class="ticker" aria-hidden="true">
-  <div class="lane">
-    <span class="label">What we fund</span>
-    <div class="mask">
-      <div class="track">
-        <span><i>OH</i> Industrial Mfg <b>2nd-Lien</b></span>
+<body data-page="solutions">
+<a class="skip-link" href="#main-content">Skip to content</a>
+<div class="ticker" data-deal-ticker tabindex="0" aria-label="Representative financing structures. Focus or hover to pause scrolling.">
+ <div class="lane"><a class="label" href="track-record.html">What we fund <span aria-hidden="true">↗</span></a><div class="mask" aria-hidden="true"><div class="track">        <span><i>OH</i> Industrial Mfg <b>2nd-Lien</b></span>
         <span><i>TX</i> Healthcare Services <b>Growth</b></span>
         <span><i>NJ</i> Industrial Dist. <b>Bridge</b></span>
         <span><i>CA</i> Tech-Enabled Svcs <b>Growth</b></span>
@@ -57,145 +51,42 @@
         <span><i>AZ</i> Behavioral Health <b>Growth</b></span>
         <span><i>NC</i> Franchise Platform <b>Recap</b></span>
         <span><i>WA</i> Aerospace &amp; Defense <b>Acquisition</b></span>
-        <span><i>TN</i> Home Health <b>Working Cap</b></span>
-      </div>
-    </div>
-  </div>
+        <span><i>TN</i> Home Health <b>Working Cap</b></span></div></div></div>
+ <span class="sr-only">Representative deal structures. View our track record for details.</span>
 </div>
-
-<div class="announce">
-  <div class="wrap">
-    <span class="tag">Brokers, ISOs &amp; Capital Advisors</span>
-    <span>Competitive commissions &middot; Direct access to your underwriter &middot; Real support from our team</span>
-    <a class="pill" href="partners.html">The Partner Program</a>
-  </div>
-</div>
-
+<div class="utility-bar"><div class="wrap"><span>Utah-based. Nationwide reach.</span><a href="tel:+12122294888">Let’s talk <span>(212) 229-4888 ↗</span></a></div></div>
 <header class="nav-bar" id="navBar">
-  <!-- The letterhead: the house, its business, and how to reach it. -->
-  <div class="masthead">
-    <div class="wrap">
-      <a class="nav-logo" href="index.html" aria-label="TVT Capital &mdash; home"><img src="assets/tvt-logo.png" alt="TVT Capital" /><span class="nav-lockup">Direct lender to<br />U.S. businesses</span></a>
-      <div class="nav-cta">
-        <a class="nav-tel" href="tel:+12122294888">(212) 229-4888</a>
-        <a class="btn btn-primary sm" href="apply.html">Request Capital</a>
-      </div>
-      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">&#9776;</button>
-    </div>
-  </div>
-  <!-- The navigation, ruled off beneath it and set across the full measure. -->
-  <div class="navrow">
-    <div class="wrap">
-      <nav class="nav-links" aria-label="Primary">
-      <a href="solutions.html" class="active">Solutions</a>
-      <a href="process.html">How It Works</a>
-      <a href="industries.html">Industries</a>
-      <a href="coverage.html">Where We Lend</a>
-      <a href="track-record.html">Our Track Record</a>
-      <a href="partners.html">Partners</a>
-      <a href="creditmatch.html">CreditMatch</a>
-      </nav>
-    </div>
-  </div>
-  <nav class="nav-mobile" aria-label="Mobile">
-    <a href="solutions.html">Solutions</a>
-    <a href="process.html">How It Works</a>
-    <a href="industries.html">Industries</a>
-    <a href="coverage.html">Where We Lend</a>
-    <a href="track-record.html">Our Track Record</a>
-    <a href="partners.html">Partners</a>
-    <a href="creditmatch.html">CreditMatch</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-    <a class="btn btn-primary" href="apply.html">Request Capital</a>
+ <div class="wrap nav-main">
+  <a class="nav-logo" href="index.html" aria-label="TVT Capital — home"><img src="assets/tvt-logo.png" alt="TVT Capital" width="265" height="146" /></a>
+  <nav class="nav-links" aria-label="Primary">
+   <a class="nav-creditmatch" href="creditmatch.html">CreditMatch</a>
+   <a href="solutions.html" class="active" aria-current="page">Financing solutions</a>
+   <a href="process.html">Our approach</a>
+   <a href="about.html">About TVT</a>
+   <a href="partners.html">For partners</a>
   </nav>
+  <a class="btn btn-primary nav-apply" href="apply.html">Request capital <span aria-hidden="true">↗</span></a>
+  <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span></button>
+ </div>
+ <nav class="nav-mobile" id="mobile-menu" aria-label="Mobile">
+  <a href="creditmatch.html">CreditMatch</a>
+  <a href="solutions.html">Financing solutions</a><a href="process.html">Our approach</a><a href="about.html">About TVT</a><a href="partners.html">For partners</a><a href="industries.html">Industries</a><a href="coverage.html">Where we lend</a><a href="track-record.html">Track record</a><a href="contact.html">Contact</a><a class="btn btn-primary" href="apply.html">Request capital ↗</a>
+ </nav>
 </header>
 
-<section class="dark-panel has-plate-img">
-  <div class="plate-img" style="background-image:url(assets/img/ledger.jpg)"></div>
-  <div class="wrap page-hero">
-    <div class="eyebrow on-dark reveal">Capital Solutions</div>
-    <h1 class="h-xl reveal" data-reveal-delay="80" style="color:#fff;">Financing built around your business</h1>
-    <div class="hero-rule reveal" data-reveal-delay="150"></div>
-    <p class="lede on-dark reveal" data-reveal-delay="190">Whatever you&rsquo;re working on &mdash; a purchase, a refinance, a growth plan &mdash; we build the financing around it. From $50K to $25M, in all 50 states.</p>
-    <div class="actions reveal" data-reveal-delay="250">
-      <a class="btn btn-brass" href="apply.html">Request a Term Sheet <span class="arrow" aria-hidden="true">&rarr;</span></a>
-      <a class="btn btn-outline on-dark" href="process.html">How We Underwrite</a>
-    </div>
-  </div>
-</section>
+<main id="main-content" tabindex="-1">
+<section class="catalog-intro"><div class="wrap"><div class="eyebrow">Financing solutions</div><div class="catalog-title"><h1>What’s your<br />next move?</h1><div><p>From day-to-day operations to your next acquisition, find financing that fits what you’re working toward.</p><div class="catalog-range"><strong>$50K—$25M</strong><span>Financing across all 50 states</span></div></div></div></div></section>
+<section class="catalog-body"><div class="wrap"><div class="catalog-controls" hidden data-filter-controls><div class="filter-buttons" role="group" aria-label="Filter financing by business need"><button type="button" data-filter="all" aria-pressed="true">All financing <span>10</span></button><button type="button" data-filter="operations" aria-pressed="false">Run the business</button><button type="button" data-filter="growth" aria-pressed="false">Grow</button><button type="button" data-filter="assets" aria-pressed="false">Buy assets</button><button type="button" data-filter="transactions" aria-pressed="false">Make a transaction</button></div><p class="filter-count" aria-live="polite" data-filter-count>10 financing options</p></div><div class="grid cols-3 finance-grid"><a class="card finance-card" data-category="operations" href="working-capital.html"><div class="tag">01 / Financing</div><h3>Working capital</h3><p class="body">Funding for operating expenses, inventory, payroll, expansion, and other business needs.</p><div class="link-hint">Explore working capital <span aria-hidden="true">↗</span></div></a><a class="card finance-card" data-category="growth" href="growth-capital.html"><div class="tag">02 / Financing</div><h3>Growth capital</h3><p class="body">Capital to open a new location, take on more business, hire employees, or invest in your next opportunity.</p><div class="link-hint">Explore growth capital <span aria-hidden="true">↗</span></div></a><a class="card finance-card" data-category="transactions" href="bridge-loans.html"><div class="tag">03 / Financing</div><h3>Bridge financing</h3><p class="body">Short-term financing while you wait for another transaction to close.</p><div class="link-hint">Explore bridge financing <span aria-hidden="true">↗</span></div></a><a class="card finance-card" data-category="operations" href="term-loans.html"><div class="tag">04 / Financing</div><h3>Term loans</h3><p class="body">Straightforward financing with a defined repayment schedule and terms built around the deal.</p><div class="link-hint">Explore term loans <span aria-hidden="true">↗</span></div></a><a class="card finance-card" data-category="assets" href="equipment-financing.html"><div class="tag">05 / Financing</div><h3>Equipment financing</h3><p class="body">Finance the equipment your business needs without tying up all of your available cash.</p><div class="link-hint">Explore equipment financing <span aria-hidden="true">↗</span></div></a><a class="card finance-card" data-category="assets" href="real-estate-financing.html"><div class="tag">06 / Financing</div><h3>Real estate financing</h3><p class="body">Financing solutions for commercial real estate purchases, refinancing, and other property-related opportunities.</p><div class="link-hint">Explore real estate financing <span aria-hidden="true">↗</span></div></a><a class="card finance-card" data-category="operations" href="debt-consolidation.html"><div class="tag">07 / Financing</div><h3>Debt consolidation</h3><p class="body">Combine existing business obligations into one financing structure that may make managing your payments easier.</p><div class="link-hint">Explore debt consolidation <span aria-hidden="true">↗</span></div></a><a class="card finance-card" data-category="transactions" href="acquisition-financing.html"><div class="tag">08 / Financing</div><h3>Acquisition financing</h3><p class="body">Capital to help fund a business acquisition.</p><div class="link-hint">Explore acquisition financing <span aria-hidden="true">↗</span></div></a><a class="card finance-card" data-category="transactions" href="second-lien.html"><div class="tag">09 / Financing</div><h3>Second-lien facilities</h3><p class="body">Additional financing behind your existing senior facility.</p><div class="link-hint">Explore second-lien facilities <span aria-hidden="true">↗</span></div></a><a class="card finance-card" data-category="transactions" href="recapitalizations.html"><div class="tag">10 / Financing</div><h3>Recapitalizations</h3><p class="body">Financing for owner liquidity, partner buyouts, and special situations.</p><div class="link-hint">Explore recapitalizations <span aria-hidden="true">↗</span></div></a></div><div class="catalog-help"><div><h2>Not sure where to start?</h2><p>Tell us about the business and the opportunity. We’ll help you work through the options.</p></div><a class="btn btn-primary" href="apply.html">Talk to our team ↗</a></div></div></section>
+</main>
 
-<section class="section">
-  <div class="wrap">
-    <div class="grid cols-3">
-      <a class="card reveal" href="bridge-loans.html">
-        <div class="tag">Bridge</div>
-        <h3>Bridge Loans</h3>
-        <p class="body">Bridges sized to a defined event — equity round, acquisition close, refinance, exit. First or second lien.</p>
-        <ul class="points"><li>First &amp; second lien</li><li>Event-sized structures</li><li>3 &ndash; 24 month terms</li></ul>
-        <div class="link-hint">Learn More <span aria-hidden="true">&rarr;</span></div>
-      </a>
-      <a class="card reveal" data-reveal-delay="60" href="growth-capital.html">
-        <div class="tag">Growth</div>
-        <h3>Growth Capital</h3>
-        <p class="body">Growth capital underwritten to free cash flow. Amortizing or interest-only. Designed to scale the operator.</p>
-        <ul class="points"><li>No equity dilution</li><li>Multi-year terms</li><li>Sized to coverage</li></ul>
-        <div class="link-hint">Learn More <span aria-hidden="true">&rarr;</span></div>
-      </a>
-      <a class="card reveal" data-reveal-delay="120" href="working-capital.html">
-        <div class="tag">Working Capital</div>
-        <h3>Working Capital</h3>
-        <p class="body">Working capital based on monthly deposits. Repaid as a fixed share of revenue. No equity dilution.</p>
-        <ul class="points"><li>Flexible structures</li><li>Underwritten on deposits</li><li>Typically funded in days</li></ul>
-        <div class="link-hint">Learn More <span aria-hidden="true">&rarr;</span></div>
-      </a>
-      <a class="card reveal" href="second-lien.html">
-        <div class="tag">Second Lien</div>
-        <h3>Second-Lien Facilities</h3>
-        <p class="body">Layer behind your existing senior facility without disturbing the bank relationship.</p>
-        <ul class="points"><li>Sits behind bank</li><li>No refinance needed</li><li>Senior stays in place</li></ul>
-        <div class="link-hint">Learn More <span aria-hidden="true">&rarr;</span></div>
-      </a>
-      <a class="card reveal" data-reveal-delay="60" href="acquisition-financing.html">
-        <div class="tag">Acquisition</div>
-        <h3>Acquisition Financing</h3>
-        <p class="body">Sponsor-backed and independent acquisition financing for add-ons, platforms, MBOs.</p>
-        <ul class="points"><li>Add-ons &amp; platforms</li><li>QofE-friendly</li><li>Up to $25M</li></ul>
-        <div class="link-hint">Learn More <span aria-hidden="true">&rarr;</span></div>
-      </a>
-      <a class="card reveal" data-reveal-delay="120" href="recapitalizations.html">
-        <div class="tag">Recapitalizations</div>
-        <h3>Recapitalizations</h3>
-        <p class="body">Dividend recaps, partner buyouts, and special-situation capital for operators with strong fundamentals.</p>
-        <ul class="points"><li>Owner liquidity</li><li>Partner restructurings</li><li>Bespoke structures</li></ul>
-        <div class="link-hint">Learn More <span aria-hidden="true">&rarr;</span></div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="wrap">
-    <div class="banner-cta dark reveal">
-      <div>
-        <div class="eyebrow on-dark">Ready when you are</div>
-        <h2 style="margin-top:18px;">Let&rsquo;s talk about your financing.</h2>
-        <p>Two minutes to apply, no paperwork upfront, and a real answer fast.</p>
-      </div>
-      <div class="actions">
-        <a class="btn btn-brass" href="apply.html">Request a Term Sheet</a>
-        <a class="btn btn-outline on-dark" href="tel:+12122294888">(212) 229-4888</a>
-      </div>
-    </div>
-  </div>
-</section>
+<section class="closing-cta"><div class="wrap"><div class="closing-head"><h2>Let’s talk capital.</h2></div><div class="closing-actions"><a class="btn btn-primary" href="apply.html">Start a conversation <span aria-hidden="true">↗</span></a><a class="closing-phone" href="tel:+12122294888">(212) 229-4888</a></div></div></section>
 <footer class="site">
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
         <span class="foot-logo"><img src="assets/tvt-logo.png" alt="TVT Capital" /></span>
-        <p>A direct lender to businesses across the United States. Working capital, growth, bridge financing and acquisitions &mdash; from $50K to $25M, in all 50 states.</p>
-        <address class="foot-address">500 7th Avenue, 8th Floor<br />New York, NY 10018</address>
+        <p>TVT Capital is a Utah-based direct lender with offices across the United States, including Manhattan.</p>
+        <address class="foot-address"><strong>Manhattan office</strong><br />500 7th Avenue, 8th Floor<br />New York, NY 10018</address>
         <div class="foot-contact">
           <a href="tel:+12122294888">(212) 229-4888</a>
           <a href="mailto:info@tvtcapital.com">info@tvtcapital.com</a>
@@ -205,7 +96,7 @@
         <div class="col-title">Financing</div>
         <ul>
           <li><a href="creditmatch.html">CreditMatch</a></li>
-          <li><a href="bridge-loans.html">Bridge Loans</a></li>
+          <li><a href="bridge-loans.html">Bridge Loans</a></li><li><a href="term-loans.html">Term Loans</a></li><li><a href="equipment-financing.html">Equipment Financing</a></li><li><a href="real-estate-financing.html">Real Estate Financing</a></li><li><a href="debt-consolidation.html">Debt Consolidation</a></li>
           <li><a href="growth-capital.html">Growth Capital</a></li>
           <li><a href="working-capital.html">Working Capital</a></li>
           <li><a href="second-lien.html">Second Lien</a></li>
@@ -245,6 +136,7 @@
         <a href="terms.html">Messaging Terms</a>
         <a href="disclosures.html">Disclosures</a>
         <a href="licensing.html">Licensing</a>
+        <a href="disclosures.html#image-credits">Image credits</a>
       </nav>
     </div>
     <div class="foot-credit">Site prepared by <a href="https://pemdas.ai" target="_blank" rel="noopener">PEMDAS.AI</a></div>
@@ -252,5 +144,6 @@
 </footer>
 
 <script src="tvt.js" defer></script>
+<script src="refinements.js" defer></script>
 </body>
 </html>
