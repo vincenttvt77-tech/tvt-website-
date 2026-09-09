@@ -238,6 +238,36 @@ footer.site { background:#fff; }
  .closing-cta>.wrap { grid-template-columns:1fr 1fr; }
  .closing-actions { gap:15px; }
 }
+
+/* Institutional contrast: forest green, charcoal, silver and brass details. */
+:root { --ink:#202922; --ink-soft:#525a54; --paper-2:#f2f3f1; }
+.ticker { background:#17241c; border-bottom-color:#8a7954; }
+.ticker:focus-within .track { animation-play-state:paused; }
+.ticker:focus-visible { outline:2px solid #9b895e; outline-offset:-2px; }
+.utility-bar { background:#f0f1ee; color:#354238; border-bottom:1px solid #d9ddd7; }
+.nav-bar { border-bottom:1px solid #cbd2c8; }
+.nav-links { gap:22px; }
+.nav-links a { font-size:.875rem; }
+.nav-links .nav-creditmatch { color:var(--ink-700); font-weight:600; border-bottom:2px solid #9c8758; padding-bottom:7px; }
+.home-hero,.catalog-intro,.company-intro,.process-intro { background:linear-gradient(115deg,#fff 48%,#e9ece7); }
+.home-hero h1,.company-story h1,.catalog-title h1,.process-intro h1 { font-weight:550; }
+.home-hero h1 em { color:#174b2b!important; }
+.confidence-band { background:linear-gradient(105deg,#173822,#254d30); border-top:2px solid #a38f60; border-bottom:0; }
+.confidence-grid>div strong { color:#fff; }
+.confidence-grid>div span { color:#d8e2d7; }
+.confidence-grid>div { border-color:#5a705d; }
+.confidence-grid>div:first-child { border-color:#5a705d; }
+.section.paper,.partner-feature,.catalog-body { background:linear-gradient(130deg,#f7f8f5,#e9ede7); }
+.approach-section { background:linear-gradient(110deg,#e8ede3,#fafbf8 75%); border-top-color:#cad3c4; border-bottom-color:#cad3c4; }
+.principle-list article>span,.row-number { color:#79683d; }
+.partner-intro { background:radial-gradient(ellipse at 95% 35%,#d8e0d0,transparent 65%),linear-gradient(110deg,#fff,#edf0e9); }
+.partner-promise { border-top:3px solid #8e7b4e; }
+.stage-nav button[aria-pressed="true"] { background:#20492d; color:#fff; border-color:#20492d; box-shadow:inset 3px 0 #b7a273; }
+.stage-nav button[aria-pressed="true"] small { color:#dbe5d6; }
+.closing-cta { background:linear-gradient(110deg,#e5eadf,#f6f8f2); border-top:1px solid #b7c4ab; }
+.btn-primary { background:#174b2b; }
+.btn-primary:hover { background:#103b20; }
+@media(max-width:1100px) { .nav-links { gap:15px; } .nav-links a { font-size:.8125rem; } }
 @media(max-width:760px) {
  .section { padding-top:45px; padding-bottom:45px; }
  .home-hero .hero-photo { min-height:390px; }

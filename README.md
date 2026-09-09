@@ -11,7 +11,7 @@ creditmatch.html                self-contained app, see "CreditMatch" below
 tvt.css                         design system
 tvt.js                          nav, scroll reveal, form wizard, phone masking
 refinements.css                 distinct main-page layouts, ticker, location styling
-refinements.js                  financing filters, process explorer, ticker pause
+refinements.js                  financing filters, process explorer, ticker motion
 assets/                         SVG wordmarks + favicon
 build.py                        assembles pages from src/
 src/partials/                   shared shell: head, ticker + nav, closing CTA, footer
@@ -46,7 +46,7 @@ Photo attribution and location details are in `docs/utah-location-update.md`.
 Solutions, Process, About, and Partners have distinct compositions. Financing
 filters and a four-stage process explorer progressively enhance the static
 content. All options and steps remain readable without JavaScript. The restored
-top conveyor uses the original representative structures and “What we fund”
+top conveyor pauses on hover or keyboard focus and uses the original representative structures and “What we fund”
 label; it is not a live feed of verified funded deals.
 
 All 27 marketing pages share the navigation, page shell, forms, and design
@@ -110,3 +110,5 @@ Then open http://127.0.0.1:8000/.
 All three forms (borrower intake, partner application, contact) post to
 Web3Forms with the shared `access_key`, and redirect to `thanks.html`.
 Submit-time subject lines and the phone-number mask are handled in `tvt.js`.
+
+Original site: https://tvt-capital.vercel.app/ (preserved separately). Redesign review: https://tvt-capital-redesign.vincenttvt77.chatgpt.site/ . The redesign remains on its own draft PR; the original branch is not merged or replaced.

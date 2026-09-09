@@ -1,15 +1,6 @@
 (() => {
   'use strict';
 
-  const ticker = document.querySelector('[data-deal-ticker]');
-  const pause = ticker?.querySelector('.ticker-toggle');
-  pause?.addEventListener('click', () => {
-    const paused = ticker.classList.toggle('is-paused');
-    pause.setAttribute('aria-pressed', String(paused));
-    pause.setAttribute('aria-label', paused ? 'Play deal ticker' : 'Pause deal ticker');
-    pause.textContent = paused ? 'Play' : 'Pause';
-  });
-
   const filters = document.querySelector('[data-filter-controls]');
   if (filters) {
     const buttons = [...filters.querySelectorAll('[data-filter]')];
