@@ -10,6 +10,8 @@ index.html, solutions.html, …   generated pages — commit these, don't hand-e
 creditmatch.html                self-contained app, see "CreditMatch" below
 tvt.css                         design system
 tvt.js                          nav, scroll reveal, form wizard, phone masking
+refinements.css                 distinct main-page layouts, ticker, location styling
+refinements.js                  financing filters, process explorer, ticker pause
 assets/                         SVG wordmarks + favicon
 build.py                        assembles pages from src/
 src/partials/                   shared shell: head, ticker + nav, closing CTA, footer
@@ -35,7 +37,15 @@ the source — the site is served straight from the repo, so stale output ships.
 The September 2026 redesign keeps the original TVT logo byte-for-byte. It uses
 Helvetica Neue with system sans-serif fallbacks for headings and body copy,
 the logo’s forest greens, white, and restrained silver accents. The homepage pairs a
-large typographic introduction with the existing architectural photography.
+large typographic introduction with a licensed Utah skyline photograph. TVT is
+Utah-based with a New York City office; the NYC address is labeled accordingly.
+Photo attribution and location details are in `docs/utah-location-update.md`.
+
+Solutions, Process, About, and Partners have distinct compositions. Financing
+filters and a four-stage process explorer progressively enhance the static
+content. All options and steps remain readable without JavaScript. The restored
+top conveyor uses the original representative structures and “What we fund”
+label; it is not a live feed of verified funded deals.
 
 All 27 marketing pages share the navigation, page shell, forms, and design
 system. The company-provided brief is retained in `docs/company-brief.txt`.
