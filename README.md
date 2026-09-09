@@ -38,7 +38,9 @@ The September 2026 redesign keeps the original TVT logo byte-for-byte. It uses
 Helvetica Neue with system sans-serif fallbacks for headings and body copy,
 the logo’s forest greens, white, and restrained silver accents. The homepage pairs a
 large typographic introduction with a licensed Utah skyline photograph. TVT is
-Utah-based with a New York City office; the NYC address is labeled accordingly.
+Utah-based with offices across the United States, including Manhattan; the
+supplied NYC address is labeled as the Manhattan office. The main pages use
+shorter copy, open layouts, lightly shaded surfaces, and restrained green accents.
 Photo attribution and location details are in `docs/utah-location-update.md`.
 
 Solutions, Process, About, and Partners have distinct compositions. Financing
