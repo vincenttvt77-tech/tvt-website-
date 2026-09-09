@@ -1,0 +1,74 @@
+/* Presentation only. The existing CreditMatch application remains intact. */
+body {
+  font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  background:#fff;
+  color:#142518
+}
+h1,h2,h3,.font-serif {
+  font-family:"Helvetica Neue",Helvetica,Arial,sans-serif!important;
+  font-weight:500!important
+}
+.bg-paper,.bg-paper-soft {
+  background-color:#fff
+}
+.bg-paper-sink,.bg-paper-warm {
+  background-color:#f4f6f3
+}
+.text-ink {
+  color:#142518
+}
+.text-ink-soft {
+  color:#536055
+}
+.text-gold {
+  color:#196e2b
+}
+.bg-emerald-base {
+  background-color:#003010
+}
+.text-gradient-emerald,.text-gradient-gold,.text-gradient-gold-bright {
+  background:none!important;
+  -webkit-text-fill-color:currentColor;
+  color:#216a31
+}
+.rounded-2xl {
+  border-radius:4px
+}
+.shadow-soft,.shadow-card,.shadow-glow {
+  box-shadow:none!important
+}
+button.rounded-full,a.rounded-full {
+  border-radius:3px
+}
+.grain:after {
+  display:none
+}
+[class*="animate-aurora"],[class*="bg-grid-faint"] {
+  display:none
+}
+p {
+  line-height:1.75
+}
+input,select,textarea {
+  font-size:16px!important
+}
+button:focus-visible,a:focus-visible {
+  outline:2px solid #196e2b;
+  outline-offset:4px
+}
+button {
+  min-height:44px
+}
+img[src*="tvt-logo"] {
+  filter:none!important
+}
+html {
+  scroll-padding-top:100px
+}
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after {
+    animation:none!important;
+    transition:none!important;
+    scroll-behavior:auto!important
+  }
+}

@@ -7,8 +7,8 @@ __pycache__/
 preview.html
 
 # materialised by scripts/fetch-assets.sh
-assets/*.png
-assets/img/
+assets/img/*.png
+dist/
 
 # local audit tooling only
 package.json
